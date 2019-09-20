@@ -1,0 +1,27 @@
+
+.header-container {
+    border: 5px solid red;
+}
+
+.main-content-container {
+    border: 5px solid red;
+}
+
+.portfolio-container  {
+    border: 5px solid red;
+}
+
+.portfolio-wrapper {
+    border: 5px solid blue;
+}
+.contact-container {
+    border: 5px solid red;
+}
+
+.footer-container {
+    border: 5px solid red;
+}
+
+.nav-container {
+    border: 5px solid red;
+}
