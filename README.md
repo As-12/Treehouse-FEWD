@@ -1,5 +1,7 @@
 # Treehouse FrontEnd Project02
 
+[![Build Status](https://travis-ci.com/As-12/Treehouse-FEWD.svg?branch=Project02)](https://travis-ci.com/As-12/Treehouse-FEWD)
+
 ## Instruction
 In this project, you'll build a responsive, mobile-first layout using HTML and CSS. The layout should demonstrate an understanding of responsive design by adjusting to accommodate small, medium, and large screen sizes.
 
