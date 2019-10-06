@@ -1,4 +1,142 @@
 
+/* Media Queries for Mobile */
+
+
+/*
+
+responsive-website_mobile.png is an example of how the layout should look on a mobile phone that’s 320 pixels wide.
+responsive-website_tablet.png is an example of how the layout should look on a tablet device that's at least 768 pixels wide.
+responsive-website_desktop.png is an example of how the layout should look on a screen that's at least 1024 pixels wide.
+
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* Mobile media query */
+
+@media only screen and (min-width: 320px) {
+    .wrap {
+      background-color: rgb(240, 240, 240);
+      font-family: 'Varela Round', sans-serif;
+      padding-top: 1.5em;
+      padding-left: 5%;
+      padding-right: 5%;
+      margin: 1%;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .container h1 {
+        text-align: center;
+        color: #333;
+    }
+    .container nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .container nav li {
+        display: block;
+        text-align: center;
+	    margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+
+    .container nav ul a {
+        padding: 0 10px;
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.1em;
+    }
+    .container nav ul a:hover, .container nav ul a:active {
+        color: grey;
+        font-weight: normal;
+    }
+    .intro-image {
+        width: 367px;
+        height: 225px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    header p {
+        color: #666;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        margin-top: 25px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+    }
+  }
+
+/* Tablet media query */
+@media only screen and (min-width: 768px) {
+    .wrap {
+        background-color: white;
+    }
+    .container {
+        display: block;
+        margin-bottom: 3em;
+    }
+    .container nav {
+        text-align: center;
+    }
+    .container nav li {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        background-color: inherit;
+    }
+    .intro-image {
+        float: right;
+        margin-left: 10px;
+    }
+
+    header p {
+        font-size: 1.4em;
+        text-align: left;
+        
+    }
+  }
+
+
+/* Desktop media query */
+@media only screen and (min-width: 1024px) {
+    .wrap {
+      background-color: white;
+    }
+
+    /* Header section */
+    .title {
+        text-align: left;
+        display: inline;
+    }
+    .container nav {
+        float: right;
+    }
+    .container nav li {
+        float: left;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    
+  }
+
+
+/* Global style across all media queries */
+
 .header-container {
     border: 5px solid red;
 }
@@ -25,3 +163,14 @@
 .nav-container {
     border: 5px solid red;
 }
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  * html .clearfix             { zoom: 1; } /* IE6 */
+  *:first-child+html .clearfix { zoom: 1; } /* IE7 */
