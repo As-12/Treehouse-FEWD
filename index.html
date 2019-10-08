@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>John's Portfolio</title>
   <meta name="description" content="My HTML5 portfolio">
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
   <meta name="author" content="TC">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -16,9 +17,9 @@
                 <h1 class="title">John Smith</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html#">Home</a></li>
+                        <li><a href="#portfolios">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -31,7 +32,7 @@
             </div>
         </header>
         <main>
-            <h2>Portfolio</h2>
+            <h2 id="portfolios">Portfolio</h2>
             <section class="portfolios-container">
                 <article class="portfolio">
                     <img class ="portfolio-picture" src="images/portfolio-1.png" alt="An image preview of portfolio 1.">
@@ -66,7 +67,7 @@
             </section>
         </main>
         <footer>
-            <h2>Contact</h2>
+            <h2 id="contact">Contact</h2>
             <section class="container">
                 <p>If you're interested in chatting or want more information about what I've been working on, I'd love to hear from you!</p>
                 <div class="contact-info">
@@ -74,16 +75,14 @@
                     <p>Email <span class="phone">john@smithcompany.com</span></p>
                 </div>
             </section>
-       
-        
             <div class="footer-container clearfix">
                 <hr>
                 <h1 class="footer-title">John Smith</h1>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html#">Home</a></li>
+                        <li><a href="#portfolios">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <nav class="footer-back-to-top" > <a href="#">Back Top</a> </nav>

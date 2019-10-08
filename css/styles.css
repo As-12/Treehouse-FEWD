@@ -1,7 +1,168 @@
 /* Author: Thanaphon Chavengsaksongkram */
 
+  @font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  }
+  
+/* Mobile-first CSS */
 * {
     box-sizing: border-box;
+}
+.wrap {
+    background-color: rgb(240, 240, 240);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 1.5em;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: 0%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+/* Header section */
+.container nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.container nav li {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+.container nav ul a {
+    padding: 0 10px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.container nav ul a:hover, .container nav ul a:active {
+    color: grey;
+    font-weight: normal;
+}
+.intro-image {
+    width: 367px;
+    height: 225px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header p {
+    color: #666;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+header {
+    margin-bottom: 25px;
+}
+
+/*Main-content section */
+main {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+main h2 {
+    text-transform: uppercase;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+main h3 {
+    color: #555;
+}
+main p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.portfolio-picture {
+    width: 100%;
+    object-fit: cover;
+}
+.portfolio p {
+    margin-top: 25px;
+}
+
+/* Footer section */
+.contact-info {
+    text-align: center;
+}
+.contact-info .email, 
+.contact-info .phone {
+    font-weight: bold;
+}
+.contact-info h2 {
+    text-transform: uppercase;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.contact-info h3 {
+    color: #555;
+}
+
+footer {
+    margin-top: 25px;
+}
+footer p {
+    color: #666;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+footer hr {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.footer-title {
+    text-align: left;
+    display: inline-block;
+    color: #333;
+    font-size: 1.3em;
+    margin-left: 5px;
+    margin-top: 0px;
+}
+.footer-back-to-top {
+    float: right;
+}
+footer a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+footer a:hover, footer a:active {
+    color: grey;
+    font-weight: normal;
+}
+.footer-nav {
+    display: none;
 }
 
 .clearfix:after {
@@ -12,181 +173,7 @@
     clear: both;
     height: 0;
   }
-  * html .clearfix             { zoom: 1; } /* IE6 */
-  *:first-child+html .clearfix { zoom: 1; } /* IE7 */
-
-  @font-face {
-    font-family: 'Roboto';
-    src: url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-  }
-  
-/* Mobile media query */
-
-
-@media only screen /* and (min-width: 320px) */ {
-
-    /* Global and Body styles */
-    .wrap {
-      background-color: rgb(240, 240, 240);
-      font-family: 'Roboto', sans-serif;
-      padding-top: 1.5em;
-      padding-left: 0%;
-      padding-right: 0%;
-      margin: 0%;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    h1, h2, h3 {
-        text-align: center;
-        color: #333;
-    }
-
-    /* Header section */
-
-    .container nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    .container nav li {
-        display: block;
-        text-align: center;
-	    margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: white;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        margin-left: 5px;
-        margin-right: 5px;
-        
-    }
-
-    .container nav ul a {
-        padding: 0 10px;
-        color: #333;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.1em;
-    }
-    .container nav ul a:hover, .container nav ul a:active {
-        color: grey;
-        font-weight: normal;
-    }
-    .intro-image {
-        width: 367px;
-        height: 225px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    header p {
-        color: #666;
-        font-size: 1.5em;
-        line-height: 1.5em;
-        margin-top: 25px;
-        margin-left: 5px;
-        margin-right: 5px;
-        text-align: center;
-    }
-    header {
-        margin-bottom: 25px;
-    }
-
-    /*Main-content section */
-    main {
-        background-color: white;
-        padding-top: 10px;
-        padding-bottom: 25px;
-    }
-    main h2 {
-        text-transform: uppercase;
-        margin-top: 60px;
-        margin-bottom: 40px;
-    }
-    main h3 {
-        color: #555;
-    }
-    main p {
-        color: #666;
-        font-size: 1.2em;
-        line-height: 1.2em;
-        margin-top: 25px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-    .portfolio-picture {
-        width: 100%;
-        object-fit: cover;
-    }
-    .portfolio p {
-        margin-top: 25px;
-    }
-
-     /* Footer section */
-    .contact-info {
-        text-align: center;
-    }
-    .contact-info .email, 
-    .contact-info .phone {
-        font-weight: bold;
-    }
-    .contact-info h2 {
-        text-transform: uppercase;
-        margin-top: 60px;
-        margin-bottom: 40px;
-    }
-    .contact-info h3 {
-        color: #555;
-    }
-
-    footer {
-        margin-top: 25px;
-    }
-    footer p {
-        color: #666;
-        font-size: 1.2em;
-        line-height: 1.2em;
-        margin-top: 25px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-    footer hr {
-        margin-top: 50px;
-        margin-bottom: 25px;
-    }
-    
-    .footer-title {
-        text-align: left;
-        display: inline-block;
-        color: #333;
-        font-size: 1.3em;
-        margin-left: 5px;
-        margin-top: 0px;
-    }
-    .footer-back-to-top {
-        float: right;
-    }
-    footer a {
-        color: #333;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-    footer a:hover, footer a:active {
-        color: grey;
-        font-weight: normal;
-    }
-    .footer-nav {
-        display: none;
-    }
-  }
-
-/* Tablet media query */
+/* Tablet override*/
 @media only screen and (min-width: 768px) {
     .wrap {
         background-color: rgb(240, 240, 240);
@@ -215,7 +202,6 @@
         text-align: left;
         
     }
-
     /*Portfolio */
     .portfolios-container {
         display: flex;
@@ -255,9 +241,7 @@
     }
   }
 
-
-
-/* Desktop media query */
+/* Desktop override */
 @media only screen and (min-width: 1024px) {
     .wrap {
         padding-left: 5%;
