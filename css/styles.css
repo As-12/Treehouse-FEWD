@@ -1,21 +1,25 @@
+/* Author: Thanaphon Chavengsaksongkram */
 
-/* Media Queries for Mobile */
-
-
-/*
-
-responsive-website_mobile.png is an example of how the layout should look on a mobile phone that’s 320 pixels wide.
-responsive-website_tablet.png is an example of how the layout should look on a tablet device that's at least 768 pixels wide.
-responsive-website_desktop.png is an example of how the layout should look on a screen that's at least 1024 pixels wide.
-
-*/
 * {
     box-sizing: border-box;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  * html .clearfix             { zoom: 1; } /* IE6 */
+  *:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
 /* Mobile media query */
 
 @media only screen /* and (min-width: 320px) */ {
+
+    /* Global and Body styles */
     .wrap {
       background-color: rgb(240, 240, 240);
       font-family: 'Varela Round', sans-serif;
@@ -33,6 +37,7 @@ responsive-website_desktop.png is an example of how the layout should look on a 
         text-align: center;
         color: #333;
     }
+
     /* Header section */
 
     .container nav ul {
@@ -83,6 +88,7 @@ responsive-website_desktop.png is an example of how the layout should look on a 
     header {
         margin-bottom: 25px;
     }
+
     /*Main-content section */
     main {
         background-color: white;
@@ -93,10 +99,6 @@ responsive-website_desktop.png is an example of how the layout should look on a 
         text-transform: uppercase;
         margin-top: 60px;
         margin-bottom: 40px;
-    }
-    .portfolio-cover {
-        width: 100%;
-        object-fit: cover;
     }
     main h3 {
         color: #555;
@@ -110,11 +112,15 @@ responsive-website_desktop.png is an example of how the layout should look on a 
         margin-right: auto;
         text-align: center;
     }
-    .portfolio-wrapper p {
+    .portfolio-picture {
+        width: 100%;
+        object-fit: cover;
+    }
+    .portfolio p {
         margin-top: 25px;
     }
 
-    /* Contact-info */
+     /* Footer section */
     .contact-info {
         text-align: center;
     }
@@ -130,6 +136,7 @@ responsive-website_desktop.png is an example of how the layout should look on a 
     .contact-info h3 {
         color: #555;
     }
+
     footer {
         margin-top: 25px;
     }
@@ -142,7 +149,6 @@ responsive-website_desktop.png is an example of how the layout should look on a 
         margin-right: auto;
         text-align: center;
     }
-    /*footer container*/
     footer hr {
         margin-top: 50px;
         margin-bottom: 25px;
@@ -210,13 +216,13 @@ responsive-website_desktop.png is an example of how the layout should look on a 
         flex-wrap: wrap;
         
     }
-    .portfolio-wrapper {
+    .portfolio {
         flex-basis: 40%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /*footer container*/
+    /*footer section*/
     footer {
         min-height: 100px;
     }
@@ -266,19 +272,9 @@ responsive-website_desktop.png is an example of how the layout should look on a 
     }
 
     /* Portflio */
-    .portfolio-wrapper {
+    .portfolio {
         flex-basis: 30%;
        
     }
   }
 
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
-  * html .clearfix             { zoom: 1; } /* IE6 */
-  *:first-child+html .clearfix { zoom: 1; } /* IE7 */
