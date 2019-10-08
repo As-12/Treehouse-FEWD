@@ -15,14 +15,21 @@
   * html .clearfix             { zoom: 1; } /* IE6 */
   *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+  @font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    font-display: swap;
+  }
+  
 /* Mobile media query */
+
 
 @media only screen /* and (min-width: 320px) */ {
 
     /* Global and Body styles */
     .wrap {
       background-color: rgb(240, 240, 240);
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Roboto', sans-serif;
       padding-top: 1.5em;
       padding-left: 0%;
       padding-right: 0%;
