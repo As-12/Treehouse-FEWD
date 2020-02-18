@@ -9,6 +9,7 @@
 * {
     font-family: 'Merriweather';
     box-sizing: border-box;
+
 }
 
 html, body {
@@ -32,13 +33,15 @@ header {
     padding-left: 5%;
     padding-right: 5%;
 }
-header>h1 {
+header>h2 {
     color: white;
 }
 
 
 main {
     flex: auto;
+    display: flex;
+    flex-direction: column;
     background-color: white;
     padding-left: 5%;
     padding-right: 5%;
@@ -54,16 +57,22 @@ footer {
     padding-bottom: auto;
 }
 
-h1 {
+main>:first-child {
+    margin-top: 1em;
+    justify-content: center;
+    text-align: center;
+}
+h2 {
     color: #3b4650;
 }
-h4 {
+legend {
     font-style: normal;
     font-weight: normal;
     color: #55687a;
 }
 p {
     color: #aaafb4;
+    margin-bottom: 2em;
 }
 
 hr.thick {
@@ -85,6 +94,7 @@ hr.normal {
 input[type="text"], 
 input[type="tel"], 
 input[type="email"],
+textarea,
 select {
     width: 60%;
     height: 50px;
@@ -96,8 +106,11 @@ select {
     margin: 5px;
     font-family: 'Merriweather Sans';
 }
-
-input:focus, select:focus {
+textarea {
+    height: 100px;
+    width: 100%;
+}
+input:focus, select:focus, textarea:focus {
     border: solid 3px #46698b;
     outline: none;
 }
@@ -110,23 +123,84 @@ input::placeholder {
 }
 select {
     -webkit-appearance: none;
-    color: #b8bdc0;
+    color: black;
     background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 97% 50% #eff0f1;
 }
-select option { color: black; }
-select option:first-child{
-  color: black !important;
+select:invalid {
+    color: #b8bdc0;
+  }
+[disabled] {
+    color: #b8bdc0;
+}
+
+button[type="submit"] {
+    border: solid 1px #4ebbb5;
+    background-color: #4ebbb5;
+    color: white;
+    height: 75px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 label {
     color: #55687a;
 }
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+form>:nth-child(n) {
+    flex-basis: 100%;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+} 
+#zipcode {
+    flex-basis: 50%;
+    width: 50%;
+}
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    page-break-after: avoid;
+}
+
+fieldset {
+    border: none;
+}
+fieldset>:nth-child(n) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+fieldset>:last-child {
+    margin-bottom: 0em;
+} 
 /* Tablet override*/
 @media only screen and (min-width: 768px) {
-    
+    form>input:nth-of-type(n), 
+    form>label:nth-of-type(n),
+    form>select:nth-of-type(n),
+    form>div:nth-of-type(n) {
+        flex-basis: 45%;
+        width: 45%;
+        flex-grow: 1;
+    } 
+    #zipcode {
+        width: 50%;
+        margin-left: 0;
+    }
+    form {
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+  
 }
 /* Desktop override */
 @media only screen and (min-width: 1024px) {
-        
+
 }
 
 
