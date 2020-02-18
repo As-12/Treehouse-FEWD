@@ -1,4 +1,4 @@
-# Treehouse FrontEnd Project02
+# Treehouse FrontEnd Project03
 
 [![Build Status](https://travis-ci.com/As-12/Treehouse-FEWD.svg?branch=Project02)](https://travis-ci.com/As-12/Treehouse-FEWD)
 
@@ -14,8 +14,6 @@ In addition, please avoid submitting any projects that rely on a server-side tec
 
 ## Links
 
-[Google Doc](https://docs.google.com/document/d/1rcoa-xuurU4REV79k6NX9FjQ0tNMhufvh4h95WtOhB8/edit)
-
-[Project Instruction](https://teamtreehouse.com/projects/mobilefirst-responsive-layout)
+[Project Instruction](https://teamtreehouse.com/projects/an-online-registration-form)
 
 
