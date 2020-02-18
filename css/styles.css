@@ -1,270 +1,112 @@
 /* Author: Thanaphon Chavengsaksongkram */
 
-  @font-face {
-    font-family: 'Roboto';
-    src: url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+    font-family: 'Merriweather';
+    src: url('https://fonts.googleapis.com/css?family=Merriweather&display=swap'); /* IE9 Compat Modes */
   }
   
+
 /* Mobile-first CSS */
 * {
-    box-sizing: border-box;
+    font-family: 'Merriweather';
 }
-.wrap {
-    background-color: rgb(240, 240, 240);
-    font-family: 'Roboto', sans-serif;
-    padding-top: 1.5em;
-    padding-left: 0%;
-    padding-right: 0%;
-    margin: 0%;
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
-.container {
+
+body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
-h1, h2, h3 {
-    text-align: center;
-    color: #333;
-}
-/* Header section */
-.container nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.container nav li {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    
-}
-.container nav ul a {
-    padding: 0 10px;
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.1em;
-}
-.container nav ul a:hover, .container nav ul a:active {
-    color: grey;
-    font-weight: normal;
-}
-.intro-image {
-    width: 367px;
-    height: 225px;
-    margin-left: auto;
-    margin-right: auto;
-}
-header p {
-    color: #666;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    margin-top: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
-}
+
 header {
-    margin-bottom: 25px;
+    height: 75px;
+    background-color: #2d3945;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-/*Main-content section */
 main {
+    flex: auto;
     background-color: white;
-    padding-top: 10px;
-    padding-bottom: 25px;
-}
-main h2 {
-    text-transform: uppercase;
-    margin-top: 60px;
-    margin-bottom: 40px;
-}
-main h3 {
-    color: #555;
-}
-main p {
-    color: #666;
-    font-size: 1.2em;
-    line-height: 1.2em;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.portfolio-picture {
-    width: 100%;
-    object-fit: cover;
-}
-.portfolio p {
-    margin-top: 25px;
-}
-
-/* Footer section */
-.contact-info {
-    text-align: center;
-}
-.contact-info .email, 
-.contact-info .phone {
-    font-weight: bold;
-}
-.contact-info h2 {
-    text-transform: uppercase;
-    margin-top: 60px;
-    margin-bottom: 40px;
-}
-.contact-info h3 {
-    color: #555;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 footer {
-    margin-top: 25px;
-}
-footer p {
-    color: #666;
-    font-size: 1.2em;
-    line-height: 1.2em;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-footer hr {
-    margin-top: 50px;
-    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    height: 100px;
+    color: #9da3a8;
+    padding-top: 5px;
+    padding-bottom: auto;
 }
 
-.footer-title {
-    text-align: left;
-    display: inline-block;
-    color: #333;
-    font-size: 1.3em;
-    margin-left: 5px;
-    margin-top: 0px;
+hr.thick {
+    border-top: 4px solid #2d3945;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
-.footer-back-to-top {
-    float: right;
-}
-footer a {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-footer a:hover, footer a:active {
-    color: grey;
-    font-weight: normal;
-}
-.footer-nav {
-    display: none;
+hr.thin {
+    border-top: 2px solid #2d3945;
+    margin-top: 3px;
+    padding: 0px;
 }
 
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
+hr.normal {
+    border-top: 2px solid #2d3945;
+    margin-top: 25px;
+}
+
+input[type="text"], 
+input[type="tel"], 
+input[type="email"],
+select {
+    width: 60%;
+    height: 50px;
+    border: none; 
+    padding: 5px 10px 5px 10px;
+    border: solid 1px #eff0f1;
+    background-color: #eff0f1;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+input:focus, select:focus {
+    border: solid 3px #46698b;
+    margin: 3px;
+    outline: none;
+}
+select>option{
+    font: inherit;
+
+}
+
 /* Tablet override*/
 @media only screen and (min-width: 768px) {
-    .wrap {
-        background-color: rgb(240, 240, 240);
-    }
-    .container {
-        display: block;
-        margin-bottom: 3em;
-    }
-    /* Header section */
-    .container nav {
-        text-align: center;
-    }
-    .container nav li {
-        display: inline-block;
-        margin-top: 10px;
-        margin-bottom: 0px;
-        background-color: inherit;
-    }
-    .intro-image {
-        float: right;
-        margin-left: 10px;
-    }
-
-    header p {
-        font-size: 1.4em;
-        text-align: left;
-        
-    }
-    /*Portfolio */
-    .portfolios-container {
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
-    .portfolio {
-        flex-basis: 40%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /*footer section*/
-    footer {
-        min-height: 100px;
-    }
-    .no-mobile {
-        visibility: visible;
-    }
-    .mobile {
-        visibility: hidden;
-    }
-    .footer-nav {
-        display: block;
-        float: right;
-    }
-    .footer-nav ul {
-        display: block;
-        margin: auto;
-    }
-    .footer-nav li {
-        display: inline-block;
-        margin-left: 5px;
-    }
-    .footer-back-to-top {
-        display: none;
-    }
-  }
-
+    
+}
 /* Desktop override */
 @media only screen and (min-width: 1024px) {
-    .wrap {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    /* Header section */
-    .title {
-        text-align: left;
-        display: inline;
-    }
-    .container nav {
-        float: right;
-    }
-    .container nav li {
-        float: left;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
+        
+}
 
-    /* Portflio */
-    .portfolio {
-        flex-basis: 30%;
-       
-    }
-  }
 
+
+/** TO DO *
+
+1. Flex Layout for the forms
+2. Font size, font styles, colors
+2. Form Box, round edges (Radius border?) + color
+3. Margins + Padding
+2. Sign-up Button
+4. Divider
