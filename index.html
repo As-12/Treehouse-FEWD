@@ -25,9 +25,9 @@
             <h1>Contact Information</h1>
             <form action="/action_page.php" method="post">
                 <label for="name">Full Name</label>
-                <input type="text" name="name" id="name" value="Required"><br>
+                <input type="text" name="name" id="name" placeholder="Required"><br>
                 <label for="email">Full Name</label>
-                <input type="email" name="email" id="email" value="Required"><br>
+                <input type="email" name="email" id="email" placeholder="Required"><br>
                 <label for="phone">Phone Number</label>
                 <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
                 <label for="street">Street Address</label>
@@ -36,6 +36,7 @@
                 <input type="text" name="city" id="city"><br>
                 <label for="state">State</label>
                 <select id="state" name="state">
+                    <option value="" class="select-placeholdder" disabled selected>Choose State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -94,7 +95,7 @@
                 <hr class="normal">
 
                 <h1>Newsletter</h1>
-                <p>Select the newsletters you would like to receive</p>
+                <h4>Select the newsletters you would like to receive</h4>
                 <input type="checkbox" id="news_html" name="news_html" value="news_HTML">
                 <label for="news_html">HTML News</label><br>
                 <input type="checkbox" id="news_css" name="news_css" value="news_CSS">
@@ -102,13 +103,13 @@
                 <input type="checkbox" id="news_javascript" name="news_javascript" value="news_Javascript">
                 <label for="news_javascript">Javascript News</label><br>
 
-                <p>Newsletter format</p>
+                <h4>Newsletter format</h4>
                 <input type="radio" id="format_html" name="format" value="HTML">
                 <label for="format_html">HTML</label><br>
                 <input type="radio" id="format_text" name="format" value="Text">
                 <label for="format_text">Plain text</label><br>
 
-                <p>Other topics you'd like to hear about</p>
+                <h4>Other topics you'd like to hear about</h4>
                 <textarea name="other" id="other"></textarea>
                 <br>
                 <button type="submit">Sign Up</button>

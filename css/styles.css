@@ -1,14 +1,14 @@
 /* Author: Thanaphon Chavengsaksongkram */
 
-@font-face {
-    font-family: 'Merriweather';
-    src: url('https://fonts.googleapis.com/css?family=Merriweather&display=swap'); /* IE9 Compat Modes */
-  }
-  
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
 
+ 
 /* Mobile-first CSS */
+
 * {
     font-family: 'Merriweather';
+    box-sizing: border-box;
 }
 
 html, body {
@@ -29,10 +29,13 @@ header {
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-    color: white;
     padding-left: 5%;
     padding-right: 5%;
 }
+header>h1 {
+    color: white;
+}
+
 
 main {
     flex: auto;
@@ -49,6 +52,18 @@ footer {
     color: #9da3a8;
     padding-top: 5px;
     padding-bottom: auto;
+}
+
+h1 {
+    color: #3b4650;
+}
+h4 {
+    font-style: normal;
+    font-weight: normal;
+    color: #55687a;
+}
+p {
+    color: #aaafb4;
 }
 
 hr.thick {
@@ -79,18 +94,32 @@ select {
     background-color: #eff0f1;
     border-radius: 3px;
     margin: 5px;
+    font-family: 'Merriweather Sans';
 }
 
 input:focus, select:focus {
     border: solid 3px #46698b;
-    margin: 3px;
     outline: none;
 }
-select>option{
-    font: inherit;
 
+input::placeholder {
+    text-align: right;
+    font-style: italic;
+    overflow: visible;
+    color: #b8bdc0;
 }
-
+select {
+    -webkit-appearance: none;
+    color: #b8bdc0;
+    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 97% 50% #eff0f1;
+}
+select option { color: black; }
+select option:first-child{
+  color: black !important;
+}
+label {
+    color: #55687a;
+}
 /* Tablet override*/
 @media only screen and (min-width: 768px) {
     
