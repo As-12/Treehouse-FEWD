@@ -33,10 +33,15 @@ header {
     padding-left: 5%;
     padding-right: 5%;
 }
-header>h2 {
-    color: white;
-}
 
+footer {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    color: #9da3a8;
+    padding-top: 5px;
+    padding-bottom: 95px;
+}
 
 main {
     flex: auto;
@@ -46,23 +51,17 @@ main {
     padding-left: 5%;
     padding-right: 5%;
 }
-
-footer {
-    display: flex;
-    justify-content: center;
-    font-style: italic;
-    height: 100px;
-    color: #9da3a8;
-    padding-top: 5px;
-    padding-bottom: auto;
-}
-
 main>:first-child {
     margin-top: 1em;
     justify-content: center;
     text-align: center;
 }
-h2 {
+
+/* ---- Default syles ----- */
+.title {
+    color: white;
+}
+h1, h2, h3, h4{
     color: #3b4650;
 }
 legend {
@@ -70,11 +69,12 @@ legend {
     font-weight: normal;
     color: #55687a;
 }
-p {
+p.subtitle {
     color: #aaafb4;
     margin-bottom: 2em;
 }
 
+/* ---- Divider ----- */
 hr.thick {
     border-top: 4px solid #2d3945;
     margin-bottom: 0px;
@@ -90,13 +90,13 @@ hr.normal {
     border-top: 2px solid #2d3945;
     margin-top: 25px;
 }
-
+/* ---- Input styles --------- */
 input[type="text"], 
 input[type="tel"], 
 input[type="email"],
 textarea,
 select {
-    width: 60%;
+    width: 100%;
     height: 50px;
     border: none; 
     padding: 5px 10px 5px 10px;
@@ -138,20 +138,26 @@ button[type="submit"] {
     background-color: #4ebbb5;
     color: white;
     height: 75px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: bold;
     font-size: 1.5em;
+    width: 100%;
 }
 label {
     color: #55687a;
 }
+fieldset {
+    border: none;
+}
 
+/* ---- Layout & Spacing --------- */
 form {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     
 }
 form>:nth-child(n) {
@@ -159,18 +165,19 @@ form>:nth-child(n) {
     margin-top: 0.8em;
     margin-bottom: 0.8em;
 } 
+.input-item {
+    display: flex;
+    flex-direction: column;
+}
+.input-item>:nth-child(n) {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
 #zipcode {
     flex-basis: 50%;
     width: 50%;
 }
-input[type="checkbox"], input[type="radio"] {
-    width: auto;
-    page-break-after: avoid;
-}
 
-fieldset {
-    border: none;
-}
 fieldset>:nth-child(n) {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -178,38 +185,33 @@ fieldset>:nth-child(n) {
 fieldset>:last-child {
     margin-bottom: 0em;
 } 
-/* Tablet override*/
+
+
+/* Tablet  & Desktop override*/
 @media only screen and (min-width: 768px) {
-    form>input:nth-of-type(n), 
-    form>label:nth-of-type(n),
-    form>select:nth-of-type(n),
-    form>div:nth-of-type(n) {
-        flex-basis: 45%;
-        width: 45%;
-        flex-grow: 1;
-    } 
+
     #zipcode {
         width: 50%;
         margin-left: 0;
     }
     form {
-        justify-content: flex-start;
         flex-direction: row;
     }
-  
+    main {
+        width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .input-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .input-item>:nth-child(2n-1) {
+        flex-basis: 30%;
+    }
+    .input-item>:nth-child(2n) {
+        flex-basis: 70%;
+    }
 }
-/* Desktop override */
-@media only screen and (min-width: 1024px) {
-
-}
-
-
-
-/** TO DO *
-
-1. Flex Layout for the forms
-2. Font size, font styles, colors
-2. Form Box, round edges (Radius border?) + color
-3. Margins + Padding
-2. Sign-up Button
-4. Divider
