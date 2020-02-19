@@ -146,6 +146,13 @@ button[type="submit"] {
     font-size: 1.5em;
     width: 100%;
 }
+button[type="submit"]:hover {
+    background-color: #0e7872;
+}
+button[type="submit"]:active {
+    background-color: #780e1c;
+}
+
 label {
     color: #55687a;
 }
