@@ -22,9 +22,9 @@
             <hr class="thin">
         </section>
         <section>
-            <h2>Contact Information</h2>
             <form action="#" method="post">
                 <fieldset id="contact-info-form">
+                    <legend>Contact Information</legend>
                     <div class="input-item">
                         <label for="name">Full Name</label>
                         <input type="text" required name="name" id="name" placeholder="Required"><br>
@@ -111,26 +111,24 @@
                     </div>
                     <hr class="normal">
                 </fieldset>
-                <h2>Newsletter</h2>
                 
                 <fieldset>
-                    <legend>Select the newsletters you would like to receive</legend>
+                    <legend>Newsletter</legend>
+                    <p>Select the newsletters you would like to receive</p>
                     <input type="checkbox" id="news_html" name="news" value="news_HTML" checked="checked">
                     <label for="news_html">HTML News</label><br>
                     <input type="checkbox" id="news_css" name="news" value="news_CSS">
                     <label for="news_css">CSS News</label><br>
                     <input type="checkbox" id="news_javascript" name="news" value="news_Javascript">
                     <label for="news_javascript">Javascript News</label><br>
-                </fieldset>
-                <fieldset>
-                    <legend>Newsletter format</legend>
+                    
+                    <p>Newsletter format</p>
                     <input type="radio" id="format_html" name="format" value="HTML" checked="checked">
                     <label for="format_html">HTML</label><br>
                     <input type="radio" id="format_text" name="format" value="Text">
                     <label for="format_text">Plain text</label><br>
-                </fieldset>
-                <fieldset>
-                    <legend>Other topics you'd like to hear about</legend>
+
+                    <p>Other topics you'd like to hear about</p>
                     <textarea name="other" id="other"></textarea>   
                     <button type="submit">Sign Up</button>
                 </fieldset>   
