@@ -2,7 +2,7 @@
 /* ============================================= */
 /*              Media Queries                    */
 /* ============================================= */
-@media (min-width: map.get($media-maxwidth, 'mobile')) {
+@include mq('mobile') {
 
     .container {
       max-width: 1400px;
