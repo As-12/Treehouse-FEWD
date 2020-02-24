@@ -9,5 +9,5 @@ addons:
 install:
  - pip install html5validator
 
-script: html5validator --root . --also-check-css
+script: html5validator --root index.html --also-check-css
 
