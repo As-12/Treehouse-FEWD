@@ -6,7 +6,7 @@
 
 
 @mixin mq($type) {
-    @media (min-width: map.get($media-maxwidth, $type)) {
+    @media (min-width: map-get($media-maxwidth, $type) ) {
         @content;
     }
 }
