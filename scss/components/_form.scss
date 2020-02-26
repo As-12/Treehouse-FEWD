@@ -1,0 +1,18 @@
+
+input[type="text"] {
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px 5px 10px;
+    border-color: #e5e5e5;
+    height: 50px;
+    width: 40%;
+    &:placeholder {
+        color: $font-color-2;
+    }
+
+    &:focus {
+        border: solid 3px darken(#e5e5e5, 30%);
+        outline: none;
+    }
+}

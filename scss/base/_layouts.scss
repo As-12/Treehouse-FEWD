@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    @include tablet {
+        width: $breakpoint-tablet;
+        flex-direction: row;
+    }
+    @include desktop {
+        width: $breakpoint-desktop;
+    }
+}
+
+form {
+    flex: 1 0 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 30px;
+    width: 100%;
+}
+
+li {
+    
+    flex: 1 0 100%;
+    margin-bottom: 30px;
+    @include tablet {
+        flex-basis: 45%;
+    }
+    @include desktop {
+        flex-basis: 22%;
+    }
+}
