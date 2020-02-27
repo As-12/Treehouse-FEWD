@@ -365,8 +365,8 @@ html, body {
 ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: normal;
   flex-wrap: wrap;
   width: 80%;
   margin-left: auto;
@@ -398,6 +398,8 @@ form {
 li {
   flex: 1 0 100%;
   margin-bottom: 30px;
+  margin-left: 0;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -556,4 +558,16 @@ input[type="text"]:focus {
 
 .main-gallery.dark > ul > li a {
   border: 3px solid #041d1f;
+}
+
+.main-gallery ul > li {
+  visibility: visible;
+  opacity: 1;
+  transition: transform 1s ease, visibility 0.1s, opacity 0.1s linear;
+}
+
+.main-gallery .hide {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-100%);
 }

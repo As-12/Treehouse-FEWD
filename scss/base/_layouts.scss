@@ -14,8 +14,8 @@ html, body {
 ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: normal;
     flex-wrap: wrap;
     width: 80%;
     margin-left: auto;
@@ -42,10 +42,13 @@ li {
     
     flex: 1 0 100%;
     margin-bottom: 30px;
+    margin-left: 0;
+    padding: 0;
     @include tablet {
         flex-basis: 45%;
     }
     @include desktop {
         flex-basis: 22%;
+        
     }
 }
