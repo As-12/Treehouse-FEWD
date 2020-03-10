@@ -1,470 +1,163 @@
-/* ============================================= */
-/* Sub-Folder Imports                            */
-/* ============================================= */
-/* ============================================= */
-/* Base Imports                                  */
-/* ============================================= */
-/*! modern-normalize v0.6.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
-/*
-Document
-========
-*/
-/**
-Use a better box model (opinionated).
-*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Main styles */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
-/**
-Use a more readable tab size (opinionated).
-*/
+/* Variables */
+
 :root {
-  -moz-tab-size: 4;
-  tab-size: 4;
+  --color-win: #78CF82;
+  --color-lose: #D94545;
+  --color-start: #5b85b7;
+  --color-neutral: #445069;
+  --color-neutral-light: #D2D2D2;
+  --color-keys: #37474F;
+  --color-keys-light: #E5E5E5;
+  --font-size-large: 60px;
+  --font-size-medium: 20px;
+  --transition: all .2s ease-in-out;
 }
 
-/**
-1. Correct the line height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-*/
-html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/*
-Sections
-========
-*/
-/**
-Remove the margin in all browsers.
-*/
-body {
-  margin: 0;
-}
-
-/**
-Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-*/
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-}
-
-/*
-Grouping content
-================
-*/
-/**
-Add the correct height in Firefox.
-*/
-hr {
-  height: 0;
-}
-
-/*
-Text-level semantics
-====================
-*/
-/**
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-abbr[title] {
-  text-decoration: underline dotted;
-}
-
-/**
-Add the correct font weight in Edge and Safari.
-*/
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
-1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-2. Correct the odd 'em' font sizing in all browsers.
-*/
-code,
-kbd,
-samp,
-pre {
-  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
-Add the correct font size in all browsers.
-*/
-small {
-  font-size: 80%;
-}
-
-/**
-Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
-*/
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-Forms
-=====
-*/
-/**
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-*/
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
-/**
-Remove the inheritance of text transform in Edge and Firefox.
-1. Remove the inheritance of text transform in Firefox.
-*/
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
-Correct the inability to style clickable types in iOS and Safari.
-*/
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-}
-
-/**
-Remove the inner border and padding in Firefox.
-*/
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
-Restore the focus styles unset by the previous rule.
-*/
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
-Correct the padding in Firefox.
-*/
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
-Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
-*/
-legend {
-  padding: 0;
-}
-
-/**
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-progress {
-  vertical-align: baseline;
-}
-
-/**
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/**
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to 'inherit' in Safari.
-*/
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Interactive
-===========
-*/
-/*
-Add the correct display in Chrome and Safari.
-*/
-summary {
-  display: list-item;
-}
-
-* {
-  font-family: 'Lato', sans-serif;
-}
-
-ul {
-  list-style: none;
-}
+/* main */
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
+body {
+  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+}
+
+li, ol, ul {
   padding: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-size-large);
   margin: 0;
 }
 
-ul {
+button {
+  margin: 6px;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  color: var(--color-keys);
+  font-size: var(--font-size-medium);
+  background-color: var(--color-keys-light);
+  border-radius: 5px;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: normal;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 768px) {
-  ul {
-    width: 768px;
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 1024px) {
-  ul {
-    width: 1024px;
-  }
-}
-
-form {
-  flex: 1 0 100%;
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 30px;
-  width: 100%;
-}
-
-li {
-  flex: 1 0 100%;
-  margin-bottom: 30px;
-  margin-left: 0;
-  padding: 0;
-}
-
-@media (min-width: 768px) {
-  li {
-    flex-basis: 45%;
-  }
-}
-
-@media (min-width: 1024px) {
-  li {
-    flex-basis: 22%;
-  }
-}
-
-input[type="text"] {
-  border-radius: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px 10px 5px 10px;
-  border-color: #e5e5e5;
-  height: 50px;
-  width: 40%;
-}
-
-input[type="text"]::placeholder {
-  color: #888888;
-}
-
-input[type="text"]:focus {
-  border: solid 3px #999999;
-  outline: none;
-}
-
-/*********************
- *  CSS for gallery plugin
- **********************/
-.main-gallery > ul {
-  margin-bottom: 0;
-}
-
-.main-gallery > ul > li {
-  margin-bottom: 15px;
-}
-
-.main-gallery > ul > li a {
-  border: 3px solid #FFF;
-  border-radius: 3px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  float: left;
-}
-
-.main-gallery > ul > li a > img {
-  transition: transform 0.15s ease 0s;
-  transform: scale3d(1, 1, 1);
-  width: 100%;
-}
-
-.main-gallery > ul > li a:hover > img {
-  transform: scale3d(1.1, 1.1, 1.1);
-}
-
-.main-gallery > ul > li a:hover .main-gallery-poster > img {
-  opacity: 1;
-}
-
-.main-gallery > ul > li a .main-gallery-poster {
-  background-color: rgba(0, 0, 0, 0.1);
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: background-color 0.15s ease 0s;
-}
-
-.main-gallery > ul > li a .main-gallery-poster > img {
-  left: 50%;
-  margin-left: -10px;
-  margin-top: -10px;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transition: opacity 0.3s ease 0s;
-}
-
-.main-gallery > ul > li a:hover .main-gallery-poster {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.main-gallery .justified-gallery > a > img {
-  transition: transform 0.15s ease 0s;
-  transform: scale3d(1, 1, 1);
+  justify-content: space-around;
   height: 100%;
+  max-height: 900px;
+  text-align: center;
+}
+
+.section {
   width: 100%;
+  padding: 10px;
 }
 
-.main-gallery .justified-gallery > a:hover > img {
-  transform: scale3d(1.1, 1.1, 1.1);
+/* Title */
+
+.header {
+  color: var(--color-start);
 }
 
-.main-gallery .justified-gallery > a:hover .main-gallery-poster > img {
-  opacity: 1;
+/* Phrase */
+
+.letter {
+  font-size: var(--font-size-medium);
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: var(--color-neutral-light);
+  border-radius: 5px;
 }
 
-.main-gallery .justified-gallery > a .main-gallery-poster {
-  background-color: rgba(0, 0, 0, 0.1);
+.space {
+  width: 15px;
+}
+
+.show {
+  color: #000;
+  background-color: #76CE82;
+}
+
+/* Keyboard */
+
+.keyrow {
+  display: flex;
+  justify-content: center;
+}
+
+.chosen {
+  background: var(--color-neutral);
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  color: #FFFFFF;
+}
+
+.btn__reset {
+  padding: 8px;
+  margin: 50px auto;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+}
+
+/* Overlay */
+
+#overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  justify-content: center;
+  top: 0;
   bottom: 0;
   left: 0;
-  position: absolute;
   right: 0;
-  top: 0;
-  transition: background-color 0.15s ease 0s;
+  border-radius: 5px;
 }
 
-.main-gallery .justified-gallery > a .main-gallery-poster > img {
-  left: 50%;
-  margin-left: -10px;
-  margin-top: -10px;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transition: opacity 0.3s ease 0s;
+.title {
+  color: #FFF;
 }
 
-.main-gallery .justified-gallery > a:hover .main-gallery-poster {
-  background-color: rgba(0, 0, 0, 0.5);
+.start {
+  background-color: var(--color-start);
 }
 
-.main-gallery .video .main-gallery-poster img {
-  height: 48px;
-  margin-left: -24px;
-  margin-top: -24px;
-  opacity: 0.8;
-  width: 48px;
+.start a {
+  color: var(--color-win);
 }
 
-.main-gallery.dark > ul > li a {
-  border: 3px solid #041d1f;
+.win {
+  background-color: var(--color-win);
 }
 
-.main-gallery ul > li {
-  visibility: visible;
-  opacity: 1;
-  transition: transform 1s ease, visibility 0.1s, opacity 0.1s linear;
+.win a {
+  color: var(--color-win);
 }
 
-.main-gallery .hide {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-100%);
+.lose {
+  background-color: var(--color-lose);
+}
+
+.lose a {
+  color: var(--color-lose);
 }
