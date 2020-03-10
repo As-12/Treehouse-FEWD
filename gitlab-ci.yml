@@ -1,4 +1,4 @@
-image: "python:rc"
+image: 'python:rc'
 
 stages:
   - build
@@ -7,9 +7,9 @@ stages:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
 
-before_script:
-  - pip install html5validator
-
-build:
-  - script:
-      - html5validator --root . --also-check-css
+html validation:
+  stage: build
+  before_script:
+    - pip install html5validator
+  script:
+    - html5validator --root . --also-check-css
