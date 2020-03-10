@@ -1,4 +1,6 @@
-# Treehouse FrontEnd Project06
+# Treehouse FrontEnd Project06 - Game Show App
+
+![GameShow App Banner](banner.png)
 
 [![pipeline status](https://gitlab.com/As-12/Treehouse-FEWD/badges/Project06/pipeline.svg)](https://gitlab.com/As-12/Treehouse-FEWD/-/commits/Project06)
 
