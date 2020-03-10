@@ -1,8 +1,9 @@
 # Treehouse FrontEnd Project06
 
-[![Build Status](https://travis-ci.com/As-12/Treehouse-FEWD.svg?branch=Project06)](https://travis-ci.com/As-12/Treehouse-FEWD)
+[![pipeline status](https://gitlab.com/As-12/Treehouse-FEWD/badges/Project06/pipeline.svg)](https://gitlab.com/As-12/Treehouse-FEWD/-/commits/Project06)
 
 ## Instruction
+
 In this project, you'll create a browser version of “Wheel of Success”, a word guessing game where players will click letters from an onscreen keyboard to try to guess a random phrase.
 
 Using Javascript, you’ll create an array of phrases and write functions to choose a random phrase from that array, split the phrase into letters, and put those letters onto the game board.
@@ -16,12 +17,10 @@ If the player completes the phrase before they run out of guesses, a winning scr
 A player can guess a letter only once. After they’ve guessed a letter, your programming will need to disable that letter.
 
 ## NOTE
+
 The Front End Web Development Techdegree is meant to train you in HTML, CSS, and JavaScript, and let you practice and show your mastery of these fundamental building blocks of the web. Because of that, please avoid using frameworks like Bootstrap, Foundation, Skeleton, and so on for this project. Even though you may end up using frameworks like these professionally, you still need to know and be able to implement designs with your own knowledge of HTML, CSS, and JavaScript.
 
 In addition, please avoid submitting any projects that rely on a server-side technology like PHP or Ruby on Rails.
-
-
-
 
 ## Links
 

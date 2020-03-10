@@ -10,6 +10,7 @@ cache:
 html validation:
   stage: build
   before_script:
+    - apt-get install penjdk-8-jre
     - pip install html5validator
   script:
     - html5validator --root . --also-check-css
