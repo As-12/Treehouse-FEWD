@@ -1,0 +1,15 @@
+image: "python:rc"
+
+stages:
+  - build
+
+# Each branch share the same cache
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+
+before_script:
+  - pip install html5validator
+
+build:
+  - script:
+      - html5validator --root . --also-check-css

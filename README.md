@@ -20,6 +20,9 @@ The Front End Web Development Techdegree is meant to train you in HTML, CSS, and
 
 In addition, please avoid submitting any projects that rely on a server-side technology like PHP or Ruby on Rails.
 
+
+
+
 ## Links
 
 [Project Guide](Project6-Guide.pdf)
