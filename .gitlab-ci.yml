@@ -10,6 +10,7 @@ cache:
 html validation:
   stage: build
   before_script:
-    - pip3 install html5validator
+    - pip install html5validator
+    - export PATH="/home/developer/.local/bin:$PATH"
   script:
     - html5validator --root . --also-check-css
