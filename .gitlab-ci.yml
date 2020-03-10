@@ -1,4 +1,4 @@
-image: 'python:3.6.9'
+image: 'openkbs/jre-mvn-py3'
 
 stages:
   - build
@@ -10,7 +10,6 @@ cache:
 html validation:
   stage: build
   before_script:
-    - apt-get install default-jre
     - pip install html5validator
   script:
     - html5validator --root . --also-check-css
