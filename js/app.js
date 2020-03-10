@@ -1,40 +1,162 @@
-
-
-
-/* Enable lightgallery plugin */
-let $gallery = $('#lightgallery')[0]; // Get HTML DOM instead of JQuery object
-lightGallery($gallery);
-
-
-/* Loop through element of each list item of specific class
-        If the attribute does not contain the string in text, then add hide class.
-        Delayed setting position to fixed for smooth flex flow transitions.
+/* Gameshow.JS 
+   @Auhtor: Thanaphon Chavengsaksongkram
 */
+window.addEventListener('DOMContentLoaded', event => {
+  /* ----- Shared Selectors ----- */
 
-function filterList(listId, text) {
-    const listItems = $(listId + " li");
-    listItems.each(function(index , item){
-        
-        const str = $(item).attr('data-sub-html');
-        if (str.toLowerCase().indexOf(text.toLowerCase()) >= 0) {
-            $(item).css('position','relative');
-            $(item).removeClass('hide');
-        } 
-        else {
-            $(item).addClass('hide'); 
-            setTimeout( function() { $(item).css('position','fixed');} , 500);
-        }
-        
+  const qwerty = document.querySelector('#qwerty');
+  const phrase = document.querySelector('#phrase');
+  const overlay = document.querySelector('#overlay');
+
+  /* ----- Game State & Variables ----- */
+  let missed = 0;
+  const maxHearts = document.querySelector('#scoreboard').firstElementChild.children.length;
+  const phrases = [
+    'Do it later',
+    'Never do it',
+    'Sometimes later becomes never',
+    'Do it now',
+    'Great things never come from comfort zones',
+    'Do it maybe'
+  ];
+  /* ----- Functions related to Creating , Starting and Restarting game ------ */
+  function getRandomPhraseAsArray(arr) {
+    const index = Math.round(Math.random() * (arr.length - 1));
+    return arr[index].toUpperCase();
+  }
+  function resetHearts() {
+    const scoreboard = document.querySelector('#scoreboard');
+    const hearts = Array.from(scoreboard.firstElementChild.children);
+
+    hearts.forEach(heart => {
+      heart.firstElementChild.src = 'images/liveHeart.png';
     });
-}
+  }
+  function resetKeyboard() {
+    qwerty.querySelectorAll('.chosen').forEach(chosenKey => {
+      chosenKey.classList.remove('chosen');
+    });
+  }
+  function clearDisplay() {
+    while (phrase.firstChild) {
+      phrase.removeChild(phrase.lastChild);
+    }
+    phrase.appendChild(document.createElement('ul'));
+  }
+  function addPhraseToDisplay(text) {
+    /* Aux functions specifically for addPharseToDisplay */
+    function createLetter(character) {
+      let li = document.createElement('li');
+      li.textContent = character;
+      if (character !== ' ') {
+        li.className = 'letter';
+      } else {
+        li.className = 'space';
+      }
+      return li;
+    }
+    /* addPhraseToDisplay Function starts here */
+    clearDisplay();
+    [...text].forEach(character => {
+      let item = createLetter(character);
+      phrase.firstElementChild.appendChild(item);
+    });
+  }
 
-$("#search-text").keyup(function () {
-   
-    const searchTerm = $("#search-text").val();
-    const mylist = "#lightgallery";
+  function startGame() {
+    const phraseString = getRandomPhraseAsArray(phrases);
+    addPhraseToDisplay(phraseString);
+    resetKeyboard();
+    resetHearts();
+    missed = 0;
+    overlay.classList.add('hide');
+  }
 
-    filterList(mylist, searchTerm);
+  /* ------ Functions related to running of the game  ------ */
+  function checkLetter(buttonClicked) {
+    if (buttonClicked.classList.contains('chosen')) {
+      return buttonClicked;
+    }
+    buttonText = buttonClicked.textContent;
+    buttonClicked.classList.add('chosen');
+    const listOfLetters = phrase.firstElementChild.querySelectorAll('.letter');
+    let correctGuess = false;
+    for (let i = 0; i != listOfLetters.length; i += 1) {
+      const letter = listOfLetters[i];
+      if (buttonText.toString().toLowerCase() === letter.textContent.toString().toLowerCase()) {
+        letter.classList.add('show');
+        correctGuess = true;
+      }
+    }
+    if (correctGuess) {
+      return buttonClicked;
+    } else {
+      return null;
+    }
+  }
 
- });
+  function showWinScreen() {
+    const title = overlay.querySelector('.title');
+    const button = overlay.querySelector('a');
+    button.textContent = 'Play Again';
+    title.textContent = `Winner chicken dinner!`;
 
+    overlay.classList.remove('hide');
+    overlay.classList.add('win');
+    button.classList.add('win');
+    overlay.classList.remove('lose');
+    button.classList.remove('lose');
+  }
+  function showLoseScreen() {
+    const title = overlay.querySelector('.title');
+    const button = overlay.querySelector('a');
+    button.textContent = 'Try Again';
+    title.textContent = 'Better luck next time!';
+    overlay.classList.remove('hide');
+    overlay.classList.add('lose');
+    button.classList.add('lose');
+    overlay.classList.remove('win');
+    button.classList.remove('win');
+  }
+  function checkWin() {
+    if (
+      phrase.firstElementChild.querySelectorAll('.letter').length ===
+      phrase.firstElementChild.querySelectorAll('.show').length
+    ) {
+      showWinScreen();
+    } else if (missed >= maxHearts) {
+      showLoseScreen();
+    }
+  }
 
+  function updateLife() {
+    const scoreboard = document.querySelector('#scoreboard');
+    const hearts = scoreboard.firstElementChild.children;
+
+    let count = missed;
+    let i = hearts.length - 1;
+
+    while (count > 0 && i >= 0) {
+      hearts[i].firstElementChild.src = 'images/lostHeart.png';
+      count -= 1;
+      i -= 1;
+    }
+  }
+
+  /* ---- Event Handlings ---- */
+  overlay.addEventListener('click', e => {
+    if (e.target.tagName === 'A') {
+      startGame();
+    }
+  });
+
+  qwerty.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+      if (checkLetter(e.target) === null) {
+        missed += 1;
+        updateLife();
+      }
+      checkWin();
+    }
+  });
+});

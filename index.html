@@ -1,139 +1,61 @@
-<!doctype html>
-<!-- Author: Thanaphon Chavengsaksongkram -->
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Interactive Photo Gallery</title>
-  <meta name="description" content="Interactive Photo Gallery">
-  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
-  <meta name="author" content="TC">
-  <link rel="stylesheet" href="plugins/lightgallery.js/dist/css/lightgallery.css">
-  <link rel="stylesheet" href="plugins/lightgallery.js/dist/css/lg-transitions.min.css">
-  
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <main>
-        <section>
-            <form>
-                <input type="text" id="search-text"  placeholder="Search (16 pt)">
-            </form>
-            <div class="main-gallery">
-                <ul id="lightgallery">
-                  <li data-src="photos/01.jpg"
-                  data-sub-html="<h4>Hay Bales</h4><p>I love hay bales. Took this snap on a drive through the countryside past some straw fields.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/01.jpg" alt="Scenic Picture of Hay Bales">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Hay Bales">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/02.jpg"
-                  data-sub-html="<h4>Lake</h4><p>The lake was so calm today. We had a great view of the snow on the mountains from here.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/02.jpg" alt="Scenic Picture of Lake">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Lake">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/03.jpg"
-                  data-sub-html="<h4>Canyon</h4><p>I hiked to the top of the mountain and got this picture of the canyon and trees below.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/03.jpg" alt="Scenic Picture of Canyon">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Canyon">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/04.jpg"
-                  data-sub-html="<h4>Iceberg</h4><p>It was amazing to see an iceberg up close, it was so cold but didn’t snow today. </p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/04.jpg" alt="Scenic Picture of Iceberg">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Iceberg">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/05.jpg"
-                  data-sub-html="<h4>Desert</h4><p>The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/05.jpg" alt="Scenic Picture of Desert">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Desert">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/06.jpg"
-                  data-sub-html="<h4>Fall</h4><p>Fall is coming, I love when the leaves on the trees start to change color.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/06.jpg" alt="Scenic Picture of Fall">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Fall">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/07.jpg"
-                  data-sub-html="<h4>Plantation</h4><p>I drove past this plantation yesterday, everything is so green!</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/07.jpg" alt="Scenic Picture of Plantation">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Plantation">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/08.jpg"
-                  data-sub-html="<h4>Dunes</h4><p>My summer vacation to the Oregon Coast. I love the sandy dunes!</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/08.jpg" alt="Scenic Picture of Dunes">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Dunes">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/09.jpg"
-                  data-sub-html="<h4>Countryside Lane</h4><p>We enjoyed a quiet stroll down this countryside lane.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/09.jpg" alt="Scenic Picture of Countryside">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Countryside">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/10.jpg"
-                  data-sub-html="<h4>Sunset</h4><p>Sunset at the coast! The sky turned a lovely shade of orange.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/10.jpg" alt="Scenic Picture of Sunset">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Sunset">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/11.jpg"
-                  data-sub-html="<h4>Cave</h4><p>I did a tour of a cave today and the view of the landscape below was breathtaking.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/11.jpg" alt="Scenic Picture of Cave">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Cave">
-                      </div>
-                    </a>
-                  </li>
-                  <li data-src="photos/12.jpg"
-                  data-sub-html="<h4>Bluebells</h4><p>I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.</p>">
-                    <a href="">
-                      <img class="img-responsive" src="photos/thumbnails/12.jpg" alt="Scenic Picture of Bluebells">
-                      <div class="main-gallery-poster">
-                        <img src="https://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png" alt="Scenic Picture of Bluebells">
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="plugins/lightgallery.js/dist/js/lightgallery.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Wheel of Success!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="overlay" class="start">
+        <h2 class="title">Wheel of Success</h2>
+        <a class="btn__reset">Start Game</a>
+      </div>
+
+      <div id="banner" class="section">
+        <h2 class="header">Wheel of Success</h2>
+      </div>
+
+      <div id="phrase" class="section">
+        <ul></ul>
+      </div>
+      <div id="qwerty" class="section">
+        <div class="keyrow">
+          <button>q</button><button>w</button><button>e</button><button>r</button><button>t</button
+          ><button>y</button><button>u</button><button>i</button><button>o</button
+          ><button>p</button>
+        </div>
+        <div class="keyrow">
+          <button>a</button><button>s</button><button>d</button><button>f</button><button>g</button
+          ><button>h</button><button>j</button><button>k</button><button>l</button>
+        </div>
+        <div class="keyrow">
+          <button>z</button><button>x</button><button>c</button><button>v</button><button>b</button
+          ><button>n</button><button>m</button>
+        </div>
+      </div>
+
+      <div id="scoreboard" class="section">
+        <ol>
+          <li class="tries">
+            <img src="images/liveHeart.png" height="35" width="30" alt="heart" />
+          </li>
+          <li class="tries">
+            <img src="images/liveHeart.png" height="35" width="30" alt="heart" />
+          </li>
+          <li class="tries">
+            <img src="images/liveHeart.png" height="35" width="30" alt="heart" />
+          </li>
+          <li class="tries">
+            <img src="images/liveHeart.png" height="35" width="30" alt="heart" />
+          </li>
+          <li class="tries">
+            <img src="images/liveHeart.png" height="35" width="30" alt="heart" />
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
 </html>
