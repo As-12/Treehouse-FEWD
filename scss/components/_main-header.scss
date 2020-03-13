@@ -1,0 +1,48 @@
+/* ============================================= */
+/*              Main-headers                     */
+/* ============================================= */
+
+.main-header {
+  @include grid-col {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  background-color: map-get($main-header-color, 'bg');
+}
+
+.main-header .tab {
+  grid-column-start: auto;
+  padding-left: 25px;
+  border-right: 3px solid map-get($main-color, 'border');
+  border-bottom: 3px solid map-get($main-color, 'border');
+  background-color: map-get($main-color, 'bg');
+}
+.main-header .selected {
+  border-bottom: none;
+}
+
+.main-header .headline {
+  @include font-size(20px);
+  color: map-get($main-header-color, 'font');
+  font-weight: normal;
+}
+
+.main-header > :last-child {
+  @include flex-row {
+    justify-content: flex-end;
+  }
+  grid-column-start: 3;
+  grid-column-end: -1;
+  border-bottom: 3px solid map-get($main-color, 'border');
+}
+
+.main-header .search {
+  @include flex-row {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.main-header .search > :first-child {
+  width: 50%;
+  margin-left: auto;
+}

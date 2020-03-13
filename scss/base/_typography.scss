@@ -1,0 +1,33 @@
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.45em;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color: map-get($nav-color, 'bg');
+}
+a:visited {
+  color: map-get($nav-color, 'bg');
+}
+a:hover {
+  color: map-get($nav-color, 'bg');
+}
+a:active {
+  color: map-get($nav-color, 'bg');
+}
+
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */

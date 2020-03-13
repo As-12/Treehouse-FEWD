@@ -1,0 +1,57 @@
+.settings {
+  @include grid-row;
+  display: grid;
+  border-bottom: 3px solid map-get($main-color, 'border');
+  padding-bottom: 15px;
+}
+
+.settings-header {
+  @include grid-col;
+}
+.settings-header > :first-child {
+  @include section-title;
+}
+
+.settings-form {
+  @include flex-col {
+    width: 85%;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.settings-form > :nth-child(n) {
+  margin-top: 20px;
+}
+
+.settings-form select {
+  width: 90%;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.settings-button {
+  @include flex-row {
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
+.settings-button > :nth-child(n) {
+  width: 40%;
+}
+
+.settings-toggle {
+  @include flex-row {
+    width: 90%;
+    margin-bottom: 25px;
+    justify-content: space-between;
+  }
+}
+
+.settings-toggle p {
+  color: map-get($main-color, 'font');
+  margin-right: 25%;
+}

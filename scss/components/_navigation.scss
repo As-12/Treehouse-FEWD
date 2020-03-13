@@ -1,0 +1,28 @@
+/* ============================================= */
+/*              Navigation  Component            */
+/* ============================================= */
+nav {
+  background-color: map-get($nav-color, 'bg');
+  color: map-get($nav-color, 'font');
+}
+nav ol {
+  @include flex-row {
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  list-style: none;
+  background-color: map-get($nav-color, 'bg');
+  color: map-get($nav-color, 'font');
+}
+nav img {
+  width: 35px;
+  height: 35px;
+}
+nav a {
+  display: block;
+  @include transition(background-color 0.5s linear);
+  &:hover {
+    background-color: white;
+  }
+}

@@ -1,0 +1,51 @@
+.activities {
+  @include grid-row;
+  background-color: white;
+  border-bottom: 3px solid map-get($main-color, 'border');
+}
+.activities-header {
+  @include grid-col;
+}
+.activities-header > :first-child {
+  @include section-title;
+}
+
+.activities-widget {
+  @include grid-row;
+  margin-bottom: 25px;
+}
+
+.activities-container {
+  @include flex-row;
+  margin: auto;
+  margin-top: 15px;
+  width: 85%;
+  padding-bottom: 10px;
+  border-bottom: 3px solid map-get($main-color, 'border');
+}
+
+.activities-container > :nth-child(n + 1) {
+  margin-left: 15px;
+}
+
+.activities-container p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: 0;
+  color: map-get($main-color, 'font');
+}
+
+.activities-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.activities-container > :last-child {
+  margin-left: auto;
+}
+
+.activities-widget > :last-child {
+  border-bottom: none;
+  margin-bottom: 25px;
+}

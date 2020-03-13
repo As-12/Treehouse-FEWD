@@ -1,0 +1,40 @@
+.traffic {
+  @include grid-row;
+  background-color: white;
+  border-bottom: 3px solid map-get($main-color, 'border');
+}
+.traffic-header {
+  @include grid-col;
+}
+.traffic-header > :first-child {
+  @include section-title;
+}
+
+.traffic-options {
+  @include flex-row {
+    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: 10%;
+    min-height: 50px;
+  }
+  list-style: none;
+}
+.traffic-option {
+  text-align: center;
+  @include font-size(20px);
+  margin-top: 20px;
+  margin-right: 15px;
+  padding: 10px;
+}
+
+.active,
+.active a {
+  background-color: map-get($nav-color, 'bg');
+  border-radius: 5px;
+  color: map-get($main-color, 'bg');
+  text-decoration: none;
+}
+
+.traffic-widget {
+  margin: auto;
+}

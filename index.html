@@ -7,6 +7,242 @@
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="grid-container">
+      <header>
+        <div class="app-title">
+          <p><b>Your</b>App<sup>&trade;</sup></p>
+        </div>
+        <ol class="login-user">
+          <li>
+            <h4 class="name">User Name</h4>
+          </li>
+          <li>
+            <img class="avatar-img" src="images/member-1.jpg" alt="Avatar image of login user" />
+          </li>
+          <li class="vl"></li>
+          <li>
+            <img class="status-bell" src="icons/icon-bell.svg" />
+          </li>
+        </ol>
+      </header>
+      <nav>
+        <ol>
+          <li>
+            <a href="#"><img src="icons/icon-members.svg"/></a>
+          </li>
+          <li>
+            <a href="#"><img src="icons/icon-settings.svg"/></a>
+          </li>
+          <li>
+            <a href="#"><img src="icons/icon-visits.svg"/></a>
+          </li>
+        </ol>
+      </nav>
+      <main>
+        <!-- Dash board header section -->
+        <section class="main-header">
+          <div class="tab selected">
+            <h4 class="headline">Dashboard</h4>
+          </div>
+          <div class="tab">
+            <h4 class="headline">Other</h4>
+          </div>
+          <div class="search">
+            <input type="search" placeholder="Search..." />
+          </div>
+        </section>
+        <section class="alerts">
+          <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an alert box.
+          </div>
+          <div class="warning">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an warning box.
+          </div>
+          <div class="info">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an info box.
+          </div>
+          <div class="success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            The operation completed successfully.
+          </div>
+        </section>
+        <section class="traffic">
+          <div class="traffic-header">
+            <h5>Traffic</h5>
+            <ol class="traffic-options">
+              <li class="traffic-option"><a href="#">Hourly</a></li>
+              <li class="traffic-option"><a href="#">Daily</a></li>
+              <li class="traffic-option active"><a href="#">Weekly</a></li>
+              <li class="traffic-option"><a href="#">Monthly</a></li>
+            </ol>
+          </div>
+          <div class="traffic-widget">
+            <!-- <canvas id="traiffic-chart"></canvas> -->
+            <img src="images/polyfill-traffic.jpg" alt="" />
+          </div>
+        </section>
+        <section class="daily">
+          <div class="daily-header">
+            <h5>Daily</h5>
+          </div>
+          <div class="daily-widget">
+            <!-- <canvas id="traiffic-chart"></canvas> -->
+            <img src="images/polyfill-traffic.jpg" alt="" />
+          </div>
+        </section>
+        <section class="demograhphic">
+          <div class="demograhphic-header">
+            <h5>Mobile Users</h5>
+          </div>
+          <div class="demograhphic-widget">
+            <!-- <canvas id="traiffic-chart"></canvas> -->
+            <img src="images/polyfill-traffic.jpg" alt="" />
+          </div>
+        </section>
+        <section class="social">
+          <div class="social-header">
+            <h5>Social Stats</h5>
+          </div>
+          <div class="social-widget">
+            <div class="social-container">
+              <div>
+                <img src="icons/icon-facebook.svg" />
+              </div>
+              <div>
+                <h6>Twitter</h6>
+                <p>123456</p>
+              </div>
+            </div>
+            <div class="social-container">
+              <div>
+                <img src="icons/icon-facebook.svg" />
+              </div>
+              <div>
+                <h6>Twitter</h6>
+                <p>123456</p>
+              </div>
+            </div>
+            <div class="social-container">
+              <div>
+                <img src="icons/icon-facebook.svg" />
+              </div>
+              <div>
+                <h6>Twitter</h6>
+                <p>123456</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="members">
+          <div class="members-header">
+            <h5>New Members</h5>
+          </div>
+          <div class="members-widget">
+            <div class="members-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>Victoria Chambers</p>
+                <a href="#">victoria.chambers80@example.com</a>
+              </div>
+              <p>10/15/15</p>
+            </div>
+            <div class="members-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>Victoria Chambers</p>
+                <a href="#">victoria.chambers80@example.com</a>
+              </div>
+              <p>10/15/15</p>
+            </div>
+            <div class="members-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>Victoria Chambers</p>
+                <a href="#">victoria.chambers80@example.com</a>
+              </div>
+              <p>10/15/15</p>
+            </div>
+          </div>
+        </section>
+        <section class="activities">
+          <div class="activities-header">
+            <h5>Recent Activities Members</h5>
+          </div>
+          <div class="activities-widget">
+            <div class="activities-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>just wrote his first post!</p>
+                <p>5 hours ago</p>
+              </div>
+              <img src="icons/icon-arrow-right.png" />
+            </div>
+            <div class="activities-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>just wrote his first post!</p>
+                <p>5 hours ago</p>
+              </div>
+              <img src="icons/icon-arrow-right.png" />
+            </div>
+            <div class="activities-container">
+              <img src="images/member-1.jpg" />
+              <div>
+                <p>just wrote his first post!</p>
+                <p>5 hours ago</p>
+              </div>
+              <img src="icons/icon-arrow-right.png" />
+            </div>
+          </div>
+        </section>
+        <section class="message">
+          <div class="message-header">
+            <h5>Message User</h5>
+          </div>
+          <form class="message-form">
+            <input type="text" placeholder="Search for user" class="form-field" id="userField" />
+            <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
+            <button class="button-primary" id="send">Send</button>
+          </form>
+        </section>
+        <section class="settings">
+          <div class="settings-header">
+            <h5>Settings</h5>
+          </div>
+          <div class="settings-form">
+            <div class="settings-toggle">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="settings-toggle">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <select class="form-field" id="timezone">
+              <option disabled selected>Select a Timezone</option>
+              <option>Eastern</option>
+            </select>
+            <div class="settings-button">
+              <button class="button-primary" id="save">Save</button>
+              <button class="button-disabled" id="cancel">Cancel</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

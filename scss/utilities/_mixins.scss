@@ -1,0 +1,92 @@
+@mixin center-block {
+  margin: auto;
+  display: block;
+}
+
+/*---- Font mixin ----*/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*---- transitions ----*/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*--- Flex mixins --- */
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  @content;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  @content;
+}
+
+/*--- grid mixins ---*/
+@mixin grid-col($minSize: 0px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+  grid-template-rows: 1fr;
+  @content;
+}
+
+@mixin grid-row($minSize: 0px) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax($minSize, 1fr));
+  @content;
+}
+
+@mixin widget-grid-container {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 4fr;
+  grid-template-rows: 1fr minmax(1fr, 2fr);
+  grid-template-areas: '. .';
+}
+
+@mixin widget-grid-header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+/*--- styling mixins ---*/
+@mixin section-title {
+  @include font-size(25px);
+  font-weight: normal;
+  margin-left: 25px;
+  color: map-get($nav-color, 'bg');
+  text-transform: uppercase;
+  @content;
+}
+
+/*--- notification bar ---- */
+
+@mixin alert-style {
+  color: white;
+  margin: 15px;
+  padding: 20px;
+  @content;
+}
+
+@mixin section-header {
+}
