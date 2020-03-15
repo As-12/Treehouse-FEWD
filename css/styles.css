@@ -510,7 +510,6 @@ input:checked + .slider:before {
 nav {
   background-color: #4d4c72;
   color: white;
-  margin: 0;
 }
 
 nav ol {
@@ -519,7 +518,7 @@ nav ol {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
@@ -535,6 +534,7 @@ nav ol {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
+    margin-bottom: 0;
     height: 100%;
     justify-content: flex-start;
     padding: 0;
@@ -741,6 +741,28 @@ header {
   .login-user .name {
     display: block;
   }
+}
+
+#status-bell {
+  width: 35px;
+  margin-left: auto;
+  position: relative;
+  transition: 0.5s ease;
+}
+
+#status-bell:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+#status-bell-notification {
+  background-color: lightseagreen;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  border-radius: 50%;
 }
 
 /* ============================================= */
