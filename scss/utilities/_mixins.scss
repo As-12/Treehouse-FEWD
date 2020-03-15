@@ -1,3 +1,16 @@
+/*---- Media Query ---*/
+@mixin desktop {
+  @media (min-width: map-get($mq-breakpoints, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: map-get($mq-breakpoints, 'tablet')) {
+    @content;
+  }
+}
+
 @mixin center-block {
   margin: auto;
   display: block;
@@ -51,7 +64,7 @@
   @content;
 }
 
-@mixin grid-row($minSize: 0px, $headerSize: 125px) {
+@mixin grid-row($minSize: 0px, $headerSize: auto) {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: $headerSize repeat(auto-fit, minmax($minSize, 4fr));
@@ -71,11 +84,15 @@
 }
 /*--- styling mixins ---*/
 @mixin section-title {
-  @include font-size(25px);
+  @include font-size(18px);
   font-weight: normal;
-  margin-left: 25px;
+  margin-left: auto;
+  margin-right: auto;
   color: map-get($nav-color, 'bg');
   text-transform: uppercase;
+  @include tablet {
+    margin-left: 25px;
+  }
   @content;
 }
 
@@ -86,11 +103,4 @@
   margin: 15px;
   padding: 20px;
   @content;
-}
-
-/*---- Media Query ---*/
-@mixin desktop {
-  @media (min-width: map-get($mq-breakpoints, 'desktop')) {
-    @content;
-  }
 }

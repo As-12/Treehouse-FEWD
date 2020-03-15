@@ -37,6 +37,7 @@ textarea:focus {
 button {
   height: 50px;
   border-radius: 15px;
+  padding: 3px;
   outline: none;
   background-color: map-get($header-color, 'bg');
   color: white;

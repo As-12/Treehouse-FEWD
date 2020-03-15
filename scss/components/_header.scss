@@ -57,4 +57,9 @@ header {
 
 .login-user .name {
   @include font-size(15px);
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
 }

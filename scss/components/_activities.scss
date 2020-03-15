@@ -23,9 +23,13 @@
   margin: auto;
   margin-top: 15px;
   height: 100px;
-  width: 85%;
+  width: 100%;
   padding-bottom: 10px;
   border-bottom: 3px solid map-get($main-color, 'border');
+
+  @include tablet {
+    width: 85%;
+  }
 }
 
 .activities-container > :nth-child(n + 1) {
@@ -46,9 +50,12 @@
   border-radius: 50%;
 }
 .activities-container > :last-child {
-  margin-left: auto;
+  display: none;
+  @include tablet {
+    margin-left: auto;
+    display: block;
+  }
 }
-
 .activities-widget > :last-child {
   border-bottom: none;
   margin-bottom: 25px;
