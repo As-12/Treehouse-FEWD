@@ -1,11 +1,7 @@
 .message {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
   padding-bottom: 15px;
-}
-.message-header {
-  @include grid-col;
 }
 .message-header > :first-child {
   @include section-title;

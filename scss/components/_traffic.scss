@@ -1,5 +1,4 @@
 .traffic {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
 }

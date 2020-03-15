@@ -1,20 +1,15 @@
 .activities {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
   @include desktop {
     border-left: 3px solid map-get($main-color, 'border');
   }
 }
-.activities-header {
-  @include grid-col;
-}
 .activities-header > :first-child {
   @include section-title;
 }
 
 .activities-widget {
-  @include grid-row;
   margin-bottom: 25px;
 }
 

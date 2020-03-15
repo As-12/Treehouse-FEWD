@@ -1,15 +1,10 @@
 .daily {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
-}
-.daily-header {
-  @include grid-col;
 }
 .daily-header > :first-child {
   @include section-title;
 }
-
 .daily-widget {
   margin: auto;
 }

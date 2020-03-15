@@ -1,6 +1,4 @@
 .settings {
-  @include grid-row;
-  display: grid;
   border-bottom: 3px solid map-get($main-color, 'border');
   padding-bottom: 15px;
   @include desktop {
@@ -8,9 +6,6 @@
   }
 }
 
-.settings-header {
-  @include grid-col;
-}
 .settings-header > :first-child {
   @include section-title;
 }

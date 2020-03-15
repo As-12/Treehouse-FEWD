@@ -1,17 +1,13 @@
 .members {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
 }
-.members-header {
-  @include grid-col;
-}
+
 .members-header > :first-child {
   @include section-title;
 }
 
 .members-widget {
-  @include grid-row;
   margin-bottom: 25px;
 }
 

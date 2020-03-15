@@ -80,8 +80,10 @@
   margin-right: auto;
   color: map-get($nav-color, 'bg');
   text-transform: uppercase;
+  text-align: center;
   @include tablet {
     margin-left: 25px;
+    text-align: left;
   }
   @content;
 }

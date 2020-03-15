@@ -1,16 +1,6 @@
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
-
-/*.grid-container {
-  display: grid;
-  grid-template-columns: minmax(70px, 1fr) 20fr;
-  grid-template-rows: minmax(50px, 1fr) 20fr;
-  grid-template-areas:
-    'header header'
-    'nav main';
-}
-*/
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;

@@ -21,7 +21,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
 html {
   line-height: 1.15;
   /* 1 */
@@ -572,15 +571,6 @@ nav a:hover {
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
-/*.grid-container {
-  display: grid;
-  grid-template-columns: minmax(70px, 1fr) 20fr;
-  grid-template-rows: minmax(50px, 1fr) 20fr;
-  grid-template-areas:
-    'header header'
-    'nav main';
-}
-*/
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -816,9 +806,6 @@ header {
 }
 
 .traffic {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
@@ -849,12 +836,14 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
   .traffic-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -912,17 +901,8 @@ header {
 }
 
 .daily {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
-}
-
-.daily-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .daily-header > :first-child {
@@ -933,11 +913,13 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .daily-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -973,11 +955,13 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .demograhphic-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -1007,11 +991,13 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .social-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -1063,17 +1049,8 @@ header {
 }
 
 .members {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
-}
-
-.members-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .members-header > :first-child {
@@ -1084,18 +1061,17 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .members-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
 .members-widget {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   margin-bottom: 25px;
 }
 
@@ -1182,9 +1158,6 @@ header {
 }
 
 .activities {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
@@ -1195,12 +1168,6 @@ header {
   }
 }
 
-.activities-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
-}
-
 .activities-header > :first-child {
   font-size: 18px;
   font-size: 1.125rem;
@@ -1209,18 +1176,17 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .activities-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
 .activities-widget {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   margin-bottom: 25px;
 }
 
@@ -1279,18 +1245,9 @@ header {
 }
 
 .message {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
   padding-bottom: 15px;
-}
-
-.message-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .message-header > :first-child {
@@ -1301,11 +1258,13 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .message-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
@@ -1348,10 +1307,6 @@ header {
 }
 
 .settings {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
-  display: grid;
   border-bottom: 3px solid #dfdfdf;
   padding-bottom: 15px;
 }
@@ -1362,12 +1317,6 @@ header {
   }
 }
 
-.settings-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
-}
-
 .settings-header > :first-child {
   font-size: 18px;
   font-size: 1.125rem;
@@ -1376,11 +1325,13 @@ header {
   margin-right: auto;
   color: #4d4c72;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .settings-header > :first-child {
     margin-left: 25px;
+    text-align: left;
   }
 }
 
