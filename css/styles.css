@@ -10,6 +10,7 @@
 /*--- grid mixins ---*/
 /*--- styling mixins ---*/
 /*--- notification bar ---- */
+/*---- Media Query ---*/
 /* ============================================= */
 /* Base Imports                                  */
 /* ============================================= */
@@ -584,6 +585,13 @@ main {
   grid-template-areas: 'main-header' 'alerts' 'traffic' 'daily' 'demograhphic' 'social' 'members' 'activities' 'message' 'settings';
 }
 
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'main-header main-header' 'alerts alerts' 'traffic traffic' 'daily demograhphic' 'social social' 'members activities' 'message settings';
+  }
+}
+
 .main-header {
   grid-area: main-header;
 }
@@ -709,7 +717,7 @@ header {
 /* ============================================= */
 .main-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   background-color: #fbfbfb;
@@ -764,14 +772,14 @@ header {
 .traffic {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
 .traffic-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -815,20 +823,21 @@ header {
 }
 
 .traffic-widget {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .daily {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
 .daily-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -848,14 +857,20 @@ header {
 .demograhphic {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
+@media (min-width: 1024px) {
+  .demograhphic {
+    border-left: 3px solid #dfdfdf;
+  }
+}
+
 .demograhphic-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -875,14 +890,14 @@ header {
 .social {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
 .social-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -945,14 +960,14 @@ header {
 .members {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
 .members-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -968,7 +983,7 @@ header {
 .members-widget {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   margin-bottom: 25px;
 }
 
@@ -980,8 +995,9 @@ header {
   flex-wrap: nowrap;
   margin: auto;
   width: 85%;
+  margin-top: 15px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
+  height: 100px;
   border-bottom: 3px solid #dfdfdf;
 }
 
@@ -1036,14 +1052,20 @@ header {
 .activities {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
 
+@media (min-width: 1024px) {
+  .activities {
+    border-left: 3px solid #dfdfdf;
+  }
+}
+
 .activities-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -1059,7 +1081,7 @@ header {
 .activities-widget {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   margin-bottom: 25px;
 }
 
@@ -1071,6 +1093,7 @@ header {
   flex-wrap: nowrap;
   margin: auto;
   margin-top: 15px;
+  height: 100px;
   width: 85%;
   padding-bottom: 10px;
   border-bottom: 3px solid #dfdfdf;
@@ -1106,7 +1129,7 @@ header {
 .message {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
   padding-bottom: 15px;
@@ -1114,7 +1137,7 @@ header {
 
 .message-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -1137,6 +1160,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   width: 85%;
+  padding-bottom: 15px;
 }
 
 .message-form > input[type='text'] {
@@ -1148,27 +1172,40 @@ header {
 
 .message-form > button {
   width: 60%;
-  margin-top: 25px;
   margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 .message-form > textarea {
   width: 90%;
   height: 100px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1024px) {
+  .message-form > textarea {
+    height: 160px;
+  }
 }
 
 .settings {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: 125px repeat(auto-fit, minmax(0px, 4fr));
   display: grid;
   border-bottom: 3px solid #dfdfdf;
   padding-bottom: 15px;
 }
 
+@media (min-width: 1024px) {
+  .settings {
+    border-left: 3px solid #dfdfdf;
+  }
+}
+
 .settings-header {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0px, 4fr));
   grid-template-rows: 1fr;
 }
 
@@ -1188,7 +1225,7 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   width: 85%;
-  padding-bottom: 50px;
+  padding-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1212,6 +1249,8 @@ header {
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
   width: 50%;
 }
 

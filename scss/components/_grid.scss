@@ -36,7 +36,29 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-areas: 'main-header' 'alerts' 'traffic' 'daily' 'demograhphic' 'social' 'members' 'activities' 'message' 'settings';
+  grid-template-areas:
+    'main-header'
+    'alerts'
+    'traffic'
+    'daily'
+    'demograhphic'
+    'social'
+    'members'
+    'activities'
+    'message'
+    'settings';
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'main-header main-header'
+      'alerts alerts'
+      'traffic traffic'
+      'daily demograhphic'
+      'social social'
+      'members activities'
+      'message settings';
+  }
 }
 
 .main-header {
@@ -55,11 +77,9 @@ main {
 .daily {
   grid-area: daily;
 }
-
 .social {
   grid-area: social;
 }
-
 .members {
   grid-area: members;
 }

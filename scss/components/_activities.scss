@@ -2,6 +2,9 @@
   @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
+  @include desktop {
+    border-left: 3px solid map-get($main-color, 'border');
+  }
 }
 .activities-header {
   @include grid-col;
@@ -19,6 +22,7 @@
   @include flex-row;
   margin: auto;
   margin-top: 15px;
+  height: 100px;
   width: 85%;
   padding-bottom: 10px;
   border-bottom: 3px solid map-get($main-color, 'border');

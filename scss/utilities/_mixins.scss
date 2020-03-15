@@ -46,15 +46,15 @@
 /*--- grid mixins ---*/
 @mixin grid-col($minSize: 0px) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 4fr));
   grid-template-rows: 1fr;
   @content;
 }
 
-@mixin grid-row($minSize: 0px) {
+@mixin grid-row($minSize: 0px, $headerSize: 125px) {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax($minSize, 1fr));
+  grid-template-rows: $headerSize repeat(auto-fit, minmax($minSize, 4fr));
   @content;
 }
 
@@ -88,5 +88,9 @@
   @content;
 }
 
-@mixin section-header {
+/*---- Media Query ---*/
+@mixin desktop {
+  @media (min-width: map-get($mq-breakpoints, 'desktop')) {
+    @content;
+  }
 }

@@ -2,6 +2,9 @@
   @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
+  @include desktop {
+    border-left: 3px solid map-get($main-color, 'border');
+  }
 }
 .demograhphic-header {
   @include grid-col;

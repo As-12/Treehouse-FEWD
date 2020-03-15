@@ -17,6 +17,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 85%;
+    padding-bottom: 15px;
   }
 }
 
@@ -28,11 +29,16 @@
 }
 .message-form > button {
   width: 60%;
-  margin-top: 25px;
+
   margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 .message-form > textarea {
   width: 90%;
   height: 100px;
+  margin-bottom: 25px;
+  @include desktop {
+    height: 160px;
+  }
 }
