@@ -59,29 +59,19 @@
 /*--- grid mixins ---*/
 @mixin grid-col($minSize: 0px) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($minSize, 4fr));
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
   grid-template-rows: 1fr;
+
   @content;
 }
 
-@mixin grid-row($minSize: 0px, $headerSize: auto) {
+@mixin grid-row($minSize: 0px) {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: $headerSize repeat(auto-fit, minmax($minSize, 4fr));
+  grid-template-rows: repeat(auto-fit, minmax($minSize, 1fr));
   @content;
 }
 
-@mixin widget-grid-container {
-  display: grid;
-  grid-template-columns: minmax(100px, 1fr) 4fr;
-  grid-template-rows: 1fr minmax(1fr, 2fr);
-  grid-template-areas: '. .';
-}
-
-@mixin widget-grid-header {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
 /*--- styling mixins ---*/
 @mixin section-title {
   @include font-size(18px);
