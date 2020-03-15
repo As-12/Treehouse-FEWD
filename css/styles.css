@@ -510,6 +510,7 @@ input:checked + .slider:before {
 nav {
   background-color: #4d4c72;
   color: white;
+  margin: 0;
 }
 
 nav ol {
@@ -518,6 +519,7 @@ nav ol {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
+  margin-bottom: 0;
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
@@ -603,7 +605,7 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: auto;
   grid-template-areas: 'main-header' 'alerts' 'traffic' 'daily' 'demograhphic' 'social' 'members' 'activities' 'message' 'settings';
 }
 
@@ -975,6 +977,7 @@ header {
   grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
+  padding-bottom: 50px;
 }
 
 .social-header {
@@ -1250,6 +1253,12 @@ header {
   padding-bottom: 15px;
 }
 
+@media (min-width: 1024px) {
+  .message {
+    border-bottom: none;
+  }
+}
+
 .message-header > :first-child {
   font-size: 18px;
   font-size: 1.125rem;
@@ -1314,6 +1323,7 @@ header {
 @media (min-width: 1024px) {
   .settings {
     border-left: 3px solid #dfdfdf;
+    border-bottom: none;
   }
 }
 

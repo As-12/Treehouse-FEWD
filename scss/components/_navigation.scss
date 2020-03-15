@@ -4,9 +4,11 @@
 nav {
   background-color: map-get($nav-color, 'bg');
   color: map-get($nav-color, 'font');
+  margin: 0;
 }
 nav ol {
   @include flex-row {
+    margin-bottom: 0;
     justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;

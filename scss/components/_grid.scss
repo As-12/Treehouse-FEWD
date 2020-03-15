@@ -32,7 +32,7 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-template-rows: auto;
   grid-template-areas:
     'main-header'
     'alerts'

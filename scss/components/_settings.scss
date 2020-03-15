@@ -3,6 +3,7 @@
   padding-bottom: 15px;
   @include desktop {
     border-left: 3px solid map-get($main-color, 'border');
+    border-bottom: none;
   }
 }
 

@@ -2,6 +2,10 @@
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
   padding-bottom: 15px;
+
+  @include desktop {
+    border-bottom: none;
+  }
 }
 .message-header > :first-child {
   @include section-title;
