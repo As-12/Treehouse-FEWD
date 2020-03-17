@@ -69,7 +69,7 @@ header {
   margin-left: auto;
   position: relative;
   @include tablet {
-    @include hover-scale-effect;
+    @include hover-scale-effect(1.1);
   }
 }
 

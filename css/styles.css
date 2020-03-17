@@ -779,7 +779,7 @@ header {
     transition: transform 0.5s ease;
   }
   #status-bell:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
     cursor: pointer;
   }
 }
