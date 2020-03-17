@@ -1,13 +1,9 @@
 .demograhphic {
-  @include grid-row;
   background-color: white;
   border-bottom: 3px solid map-get($main-color, 'border');
   @include desktop {
     border-left: 3px solid map-get($main-color, 'border');
   }
-}
-.demograhphic-header {
-  @include grid-col;
 }
 .demograhphic-header > :first-child {
   @include section-title;
@@ -15,4 +11,9 @@
 
 .demograhphic-widget {
   margin: auto;
+  padding: 5%;
+  min-height: 200px;
+  @include desktop {
+    min-height: 400px;
+  }
 }

@@ -29,7 +29,6 @@
 }
 .message-form > button {
   width: 60%;
-
   margin-bottom: 25px;
   margin-top: 20px;
 }
@@ -41,4 +40,16 @@
   @include desktop {
     height: 160px;
   }
+}
+
+/* override JQuery's default styling */
+ul.ui-autocomplete {
+  border: solid 2px map-get($nav-color, 'bg') !important;
+}
+
+.ui-autocomplete li:hover,
+.ui-menu-item:hover,
+.ui-menu-item-wrapper:hover {
+  background-color: map-get($nav-color, 'bg') !important;
+  border: solid 1px map-get($nav-color, 'bg') !important;
 }

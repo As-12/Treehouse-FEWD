@@ -88,6 +88,14 @@
   @content;
 }
 
+@mixin hover-scale-effect($scaleSize: 1.5, $transformDuration: 0.5s) {
+  transition: transform $transformDuration ease;
+  &:hover {
+    transform: scale($scaleSize);
+    cursor: pointer;
+  }
+}
+
 /*--- notification bar ---- */
 
 @mixin alert-style {

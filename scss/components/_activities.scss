@@ -50,7 +50,9 @@
     margin-left: auto;
     display: block;
   }
+  @include hover-scale-effect;
 }
+
 .activities-widget > :last-child {
   border-bottom: none;
   margin-bottom: 25px;

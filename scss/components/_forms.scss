@@ -42,6 +42,11 @@ button {
   background-color: map-get($header-color, 'bg');
   color: white;
   text-transform: uppercase;
+  transition: background-color 0.2s linear;
+  &:hover {
+    cursor: pointer;
+    background-color: darken(map-get($header-color, 'bg'), 10%);
+  }
 }
 
 /* ----- toggle switch ----- */

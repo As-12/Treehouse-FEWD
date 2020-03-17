@@ -42,6 +42,7 @@
     margin-right: 15px;
     padding: 10px;
   }
+  transition: background-color 0.2s ease;
 }
 
 .active,
@@ -55,4 +56,5 @@
 .traffic-widget {
   margin-left: auto;
   margin-right: auto;
+  padding: 5%;
 }

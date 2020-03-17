@@ -6,5 +6,11 @@
   @include section-title;
 }
 .daily-widget {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+  min-height: 200px;
+  @include desktop {
+    min-height: 400px;
+  }
 }

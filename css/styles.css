@@ -21,6 +21,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -439,6 +440,12 @@ button {
   background-color: #7477bf;
   color: white;
   text-transform: uppercase;
+  transition: background-color 0.2s linear;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #5155af;
 }
 
 /* ----- toggle switch ----- */
@@ -522,6 +529,7 @@ nav ol {
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   list-style: none;
   background-color: #4d4c72;
   color: white;
@@ -544,6 +552,7 @@ nav ol {
 @media (min-width: 1024px) {
   nav li {
     margin-left: 0;
+    margin-right: auto;
     margin-top: 50px;
     padding: 0;
   }
@@ -556,15 +565,31 @@ nav img {
 
 nav a {
   display: block;
-  -webkit-transition: background-color 0.5s linear;
-  -moz-transition: background-color 0.5s linear;
-  -ms-transition: background-color 0.5s linear;
-  -o-transition: background-color 0.5s linear;
-  transition: background-color 0.5s linear;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-nav a:hover {
-  background-color: white;
+@media (min-width: 1024px) {
+  nav a {
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+nav a.active {
+  display: block;
+  border-bottom: 5px solid #85db80;
+}
+
+@media (min-width: 1024px) {
+  nav a.active {
+    border-bottom: none;
+    border-left: 5px solid #85db80;
+    padding-left: 20px;
+  }
 }
 
 /* ============================================= */
@@ -747,22 +772,39 @@ header {
   width: 35px;
   margin-left: auto;
   position: relative;
-  transition: 0.5s ease;
 }
 
-#status-bell:hover {
-  transform: scale(1.5);
-  cursor: pointer;
+@media (min-width: 768px) {
+  #status-bell {
+    transition: transform 0.5s ease;
+  }
+  #status-bell:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+  }
 }
 
 #status-bell-notification {
-  background-color: lightseagreen;
-  height: 10px;
-  width: 10px;
+  fill: lightseagreen;
+}
+
+.status-bell-content {
+  display: none;
   position: absolute;
-  top: 2px;
-  left: 20px;
-  border-radius: 50%;
+  background-color: #7477bf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+@media (min-width: 768px) {
+  .status-bell-content {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
 }
 
 /* ============================================= */
@@ -899,6 +941,7 @@ header {
   margin-top: 0px;
   margin-right: 10px;
   padding: 3px;
+  transition: background-color 0.2s ease;
 }
 
 @media (min-width: 768px) {
@@ -922,6 +965,7 @@ header {
 .traffic-widget {
   margin-left: auto;
   margin-right: auto;
+  padding: 5%;
 }
 
 .daily {
@@ -948,13 +992,19 @@ header {
 }
 
 .daily-widget {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+  min-height: 200px;
+}
+
+@media (min-width: 1024px) {
+  .daily-widget {
+    min-height: 400px;
+  }
 }
 
 .demograhphic {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
 }
@@ -963,12 +1013,6 @@ header {
   .demograhphic {
     border-left: 3px solid #dfdfdf;
   }
-}
-
-.demograhphic-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .demograhphic-header > :first-child {
@@ -991,21 +1035,20 @@ header {
 
 .demograhphic-widget {
   margin: auto;
+  padding: 5%;
+  min-height: 200px;
+}
+
+@media (min-width: 1024px) {
+  .demograhphic-widget {
+    min-height: 400px;
+  }
 }
 
 .social {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
   background-color: white;
   border-bottom: 3px solid #dfdfdf;
   padding-bottom: 50px;
-}
-
-.social-header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
-  grid-template-rows: 1fr;
 }
 
 .social-header > :first-child {
@@ -1033,6 +1076,7 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: auto;
 }
 
@@ -1043,31 +1087,40 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   margin: 25px;
-  padding: 10px;
   min-width: 200px;
   max-height: 100px;
   background-color: #fbfbfb;
   border: solid 3px #dfdfdf;
   border-radius: 5px;
-  padding: 25px 50px 25px 25px;
+  padding: 75px 75px 60px 50px;
+  transition: transform 0.5s ease;
 }
 
-.social-container > img {
-  width: 50px;
-  height: 50px;
+.social-container:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.social-container > :first-child {
+  padding: 5px;
+}
+
+.social-container > :last-child {
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .social-container h6 {
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 25px;
+  font-size: 1.5625rem;
   color: #7477bf;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
 
 .social-container p {
-  font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 40px;
+  font-size: 2.5rem;
   color: #666666;
   padding-top: 0px;
   margin-top: 0px;
@@ -1255,6 +1308,7 @@ header {
 
 .activities-container > :last-child {
   display: none;
+  transition: transform 0.5s ease;
 }
 
 @media (min-width: 768px) {
@@ -1262,6 +1316,11 @@ header {
     margin-left: auto;
     display: block;
   }
+}
+
+.activities-container > :last-child:hover {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
 .activities-widget > :last-child {
@@ -1335,6 +1394,18 @@ header {
   .message-form > textarea {
     height: 160px;
   }
+}
+
+/* override JQuery's default styling */
+ul.ui-autocomplete {
+  border: solid 2px #4d4c72 !important;
+}
+
+.ui-autocomplete li:hover,
+.ui-menu-item:hover,
+.ui-menu-item-wrapper:hover {
+  background-color: #4d4c72 !important;
+  border: solid 1px #4d4c72 !important;
 }
 
 .settings {
@@ -1429,6 +1500,10 @@ header {
     margin-top: 0px;
     width: 40%;
   }
+}
+
+.settings-button > :nth-child(n):hover {
+  cursor: pointer;
 }
 
 .settings-toggle {
