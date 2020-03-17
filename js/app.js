@@ -210,7 +210,6 @@ let demographicChart = new Chart(demographicChartWidget, {
 
 /* --- Header event ---- */
 document.querySelector('#status-bell').addEventListener('click', e => {
-  console.log(e.target);
   if (e.target.classList.contains('status-bell-content')) {
     $.alert({
       title: 'Inbox',
