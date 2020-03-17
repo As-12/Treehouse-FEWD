@@ -1,0 +1,33 @@
+$header-color: (
+  'bg': #7477bf,
+  'font': white
+);
+
+$nav-color: (
+  'bg': #4d4c72,
+  'font': white
+);
+
+$main-header-color: (
+  'bg': #fbfbfb,
+  'font': #676666,
+  'placeholder': #c7c7c7
+);
+
+$main-color: (
+  'bg': white,
+  'font': #666666,
+  'border': #dfdfdf
+);
+
+$default-color: (
+  'input-placeholer': #bcbcbc,
+  'input-bg': white,
+  'font': #666666,
+  'border': #dfdfdf
+);
+
+$mq-breakpoints: (
+  'desktop': '1024px',
+  'tablet': '768px'
+);

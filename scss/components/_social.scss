@@ -1,0 +1,51 @@
+.social {
+  background-color: white;
+  border-bottom: 3px solid map-get($main-color, 'border');
+  padding-bottom: 50px;
+}
+.social-header > :first-child {
+  @include section-title;
+}
+
+.social-widget {
+  @include flex-row {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  margin: auto;
+}
+
+.social-container {
+  @include flex-row {
+    margin: 25px;
+    min-width: 200px;
+    max-height: 100px;
+  }
+  background-color: #fbfbfb;
+  border: solid 3px map-get($main-color, 'border');
+  border-radius: 5px;
+  padding: 75px 75px 60px 50px;
+  @include hover-scale-effect(1.1);
+}
+
+.social-container > :first-child {
+  padding: 5px;
+}
+
+.social-container > :last-child {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.social-container h6 {
+  @include font-size(25px);
+  color: map-get($header-color, 'bg');
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.social-container p {
+  @include font-size(40px);
+  color: map-get($main-color, 'font');
+  padding-top: 0px;
+  margin-top: 0px;
+}

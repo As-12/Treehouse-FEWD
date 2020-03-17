@@ -1,0 +1,78 @@
+.members {
+  background-color: white;
+  border-bottom: 3px solid map-get($main-color, 'border');
+}
+
+.members-header > :first-child {
+  @include section-title;
+}
+
+.members-widget {
+  margin-bottom: 25px;
+}
+
+.members-container {
+  @include flex-row;
+  margin: auto;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  height: 100px;
+  border-bottom: 3px solid map-get($main-color, 'border');
+
+  @include tablet {
+    width: 85%;
+  }
+}
+
+.members-container > :nth-child(n + 1) {
+  margin-left: 15px;
+}
+.members-container > :last-child {
+  display: none;
+  @include tablet {
+    margin-left: auto;
+    display: block;
+  }
+}
+.members-container a {
+  display: block;
+  margin-top: 0;
+  padding-top: 0;
+
+  &:link {
+    color: map-get($header-color, 'bg');
+  }
+  &:visited {
+    color: map-get($header-color, 'bg');
+  }
+  &:hover {
+    color: map-get($header-color, 'bg');
+  }
+  &:active {
+    color: map-get($header-color, 'bg');
+  }
+}
+
+.members-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 15px;
+
+  display: none;
+  @include tablet {
+    display: inherit;
+  }
+}
+
+.members-container p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: map-get($main-color, 'font');
+}
+
+.members-widget > :last-child {
+  border-bottom: none;
+  margin-bottom: 25px;
+}

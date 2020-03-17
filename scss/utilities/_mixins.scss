@@ -1,0 +1,106 @@
+/*---- Media Query ---*/
+@mixin desktop {
+  @media (min-width: map-get($mq-breakpoints, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: map-get($mq-breakpoints, 'tablet')) {
+    @content;
+  }
+}
+
+@mixin center-block {
+  margin: auto;
+  display: block;
+}
+
+/*---- Font mixin ----*/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*---- transitions ----*/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*--- Flex mixins --- */
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  @content;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  @content;
+}
+
+/*--- grid mixins ---*/
+@mixin grid-col($minSize: 0px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+  grid-template-rows: 1fr;
+
+  @content;
+}
+
+@mixin grid-row($minSize: 0px) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax($minSize, 1fr));
+  @content;
+}
+
+/*--- styling mixins ---*/
+@mixin section-title {
+  @include font-size(18px);
+  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: map-get($nav-color, 'bg');
+  text-transform: uppercase;
+  text-align: center;
+  @include tablet {
+    margin-left: 25px;
+    text-align: left;
+  }
+  @content;
+}
+
+@mixin hover-scale-effect($scaleSize: 1.5, $transformDuration: 0.5s) {
+  transition: transform $transformDuration ease;
+  &:hover {
+    transform: scale($scaleSize);
+    cursor: pointer;
+  }
+}
+
+/*--- notification bar ---- */
+
+@mixin alert-style {
+  color: white;
+  margin: 15px;
+  padding: 20px;
+  @content;
+}

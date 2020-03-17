@@ -1,0 +1,94 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-areas:
+    'header'
+    'nav'
+    'main';
+  @include desktop {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+      'header header'
+      'nav main';
+  }
+}
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: '. .';
+}
+nav {
+  grid-area: nav;
+}
+/*------ Mains --------*/
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'main-header'
+    'alerts'
+    'traffic'
+    'daily'
+    'demograhphic'
+    'social'
+    'members'
+    'activities'
+    'message'
+    'settings';
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'main-header main-header'
+      'alerts alerts'
+      'traffic traffic'
+      'daily demograhphic'
+      'social social'
+      'members activities'
+      'message settings';
+  }
+}
+
+.main-header {
+  grid-area: main-header;
+}
+
+.alerts {
+  grid-area: alerts;
+}
+.traffic {
+  grid-area: traffic;
+}
+.demograhphic {
+  grid-area: demograhphic;
+}
+.daily {
+  grid-area: daily;
+}
+.social {
+  grid-area: social;
+}
+.members {
+  grid-area: members;
+}
+.activities {
+  grid-area: activities;
+}
+.message {
+  grid-area: message;
+}
+
+.settings {
+  grid-area: settings;
+}
+
+/*-----------------*/

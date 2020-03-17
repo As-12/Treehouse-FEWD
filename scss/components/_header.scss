@@ -1,0 +1,92 @@
+/* ============================================= */
+/*              Header  Component                */
+/* ============================================= */
+header {
+  @include flex-row;
+  background-color: map-get($header-color, 'bg');
+  color: map-get($nav-color, 'font');
+}
+
+/*--- application titles ---*/
+.app-title {
+  @include flex-row;
+  @include font-size(20px);
+  margin-left: 15px;
+  min-height: 25px;
+  margin-top: 10px;
+}
+.app-title p {
+  font-weight: lighter;
+}
+.app-title b {
+  font-weight: bold;
+}
+
+/*--- login user status and avatar --- */
+.login-user {
+  @include flex-row {
+    flex-direction: row-reverse;
+    margin-left: auto;
+    min-height: 25px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  list-style: none;
+}
+
+.login-user .avatar-img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.login-user .status-bell {
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+}
+
+.login-user > :nth-child(n) {
+  padding-right: 15px;
+}
+
+.login-user .vl {
+  border-left: 3px solid #4d4c72;
+  height: 30px;
+}
+
+.login-user .name {
+  @include font-size(15px);
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+#status-bell {
+  width: 35px;
+  margin-left: auto;
+  position: relative;
+  @include tablet {
+    @include hover-scale-effect;
+  }
+}
+
+#status-bell-notification {
+  fill: lightseagreen;
+}
+
+.status-bell-content {
+  display: none;
+  position: absolute;
+  background-color: map-get($header-color, 'bg');
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  @include font-size(11px);
+  @include tablet {
+    @include font-size(14px);
+  }
+}

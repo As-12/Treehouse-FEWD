@@ -1,0 +1,62 @@
+/* ============================================= */
+/*              Navigation  Component            */
+/* ============================================= */
+nav {
+  background-color: map-get($nav-color, 'bg');
+  color: map-get($nav-color, 'font');
+}
+nav ol {
+  @include flex-row {
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  @include desktop {
+    @include flex-col {
+      margin-bottom: 0;
+      height: 100%;
+      justify-content: flex-start;
+      padding: 0;
+    }
+  }
+  list-style: none;
+  background-color: map-get($nav-color, 'bg');
+  color: map-get($nav-color, 'font');
+}
+
+nav li {
+  @include desktop {
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 0;
+  }
+}
+nav img {
+  width: 35px;
+  height: 35px;
+}
+nav a {
+  display: block;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include desktop {
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+nav a.active {
+  display: block;
+  border-bottom: 5px solid #85db80;
+  @include desktop {
+    border-bottom: none;
+    border-left: 5px solid #85db80;
+    padding-left: 20px;
+  }
+}
