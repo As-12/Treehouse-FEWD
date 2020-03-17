@@ -144,7 +144,7 @@ document.querySelector('.traffic-options').addEventListener('click', e => {
 const dailyChartWidget = document.getElementById('daily-chart');
 
 const dailyData = {
-  labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
   datasets: [
     {
       label: 'Hit',
@@ -208,10 +208,18 @@ let demographicChart = new Chart(demographicChartWidget, {
   options: demographicOptions
 });
 
+let numNotification = 2;
 /* --- Header event ---- */
 document.querySelector('#status-bell').addEventListener('click', e => {
-  console.log(e.target);
-  if (e.target.classList.contains('status-bell-content')) {
+  if (e.target.classList.contains('closebtn')) {
+    e.target.parentElement.style.display = 'none';
+    numNotification -= 1;
+    if (numNotification <= 0) {
+      document.querySelector('.status-bell-content').style.display = 'none';
+    }
+    return;
+  }
+  if (e.target.textContent.includes('Inbox')) {
     $.alert({
       title: 'Inbox',
       content: 'You are all caught up with new messages.',
@@ -220,10 +228,23 @@ document.querySelector('#status-bell').addEventListener('click', e => {
       useBootstrap: false
     });
   }
-  if (document.querySelector('.status-bell-content').style.display === 'block') {
-    document.querySelector('.status-bell-content').style.display = 'none';
+  if (e.target.textContent.includes('Pull')) {
+    $.alert({
+      title: 'Pull Requests',
+      content: 'You have 2 active pull requests',
+      icon: 'fa fa-code-branch',
+      type: 'orange',
+      useBootstrap: false
+    });
+  }
+  if (numNotification > 0) {
+    if (document.querySelector('.status-bell-content').style.display === 'block') {
+      document.querySelector('.status-bell-content').style.display = 'none';
+    } else {
+      document.querySelector('.status-bell-content').style.display = 'block';
+    }
   } else {
-    document.querySelector('.status-bell-content').style.display = 'block';
+    document.querySelector('.status-bell-content').style.display = 'none';
   }
 });
 

@@ -45,11 +45,10 @@
   border-radius: 50%;
 }
 .activities-container > :last-child {
-  display: none;
-  @include tablet {
-    margin-left: auto;
-    display: block;
-  }
+  margin-left: auto;
+  margin-right: 5px;
+  display: block;
+
   @include hover-scale-effect;
 }
 
