@@ -788,13 +788,14 @@ header {
   fill: lightseagreen;
 }
 
+/*--- Drop down menu for status-bell ----*/
 .status-bell-content {
   display: none;
   position: absolute;
   background-color: #7477bf;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
+  padding: 5px;
   z-index: 1;
   font-size: 11px;
   font-size: 0.6875rem;
@@ -805,6 +806,18 @@ header {
     font-size: 14px;
     font-size: 0.875rem;
   }
+}
+
+.status-bell-content > :nth-child(n) {
+  color: black;
+  padding: 3px;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+
+.status-bell-content > :nth-child(n):hover, .status-bell-content > :nth-child(n):focus {
+  background-color: #9799cf;
 }
 
 /* ============================================= */
@@ -1178,14 +1191,9 @@ header {
 }
 
 .members-container > :last-child {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .members-container > :last-child {
-    margin-left: auto;
-    display: block;
-  }
+  margin-left: auto;
+  display: block;
+  margin-right: 10px;
 }
 
 .members-container a {
@@ -1215,13 +1223,6 @@ header {
   height: 50px;
   border-radius: 50%;
   margin-top: 15px;
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .members-container img {
-    display: inherit;
-  }
 }
 
 .members-container p {
@@ -1307,15 +1308,10 @@ header {
 }
 
 .activities-container > :last-child {
-  display: none;
+  margin-left: auto;
+  margin-right: 5px;
+  display: block;
   transition: transform 0.5s ease;
-}
-
-@media (min-width: 768px) {
-  .activities-container > :last-child {
-    margin-left: auto;
-    display: block;
-  }
 }
 
 .activities-container > :last-child:hover {
@@ -1379,7 +1375,7 @@ header {
 }
 
 .message-form > button {
-  width: 60%;
+  width: 100%;
   margin-bottom: 25px;
   margin-top: 20px;
 }
@@ -1485,12 +1481,12 @@ ul.ui-autocomplete {
     margin-right: auto;
     margin-top: 25px;
     margin-bottom: 25px;
-    width: 50%;
+    width: 100%;
   }
 }
 
 .settings-button > :nth-child(n) {
-  width: 80%;
+  width: 100%;
   margin-right: 10px;
   margin-top: 25px;
 }
@@ -1498,7 +1494,6 @@ ul.ui-autocomplete {
 @media (min-width: 768px) {
   .settings-button > :nth-child(n) {
     margin-top: 0px;
-    width: 40%;
   }
 }
 
