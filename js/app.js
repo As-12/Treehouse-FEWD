@@ -195,6 +195,7 @@ class StubEmployeeRepository {
         this.onReadyCallback(this);
       })
       .catch(err => {
+        alert(`Error Loading Information ${err}`);
         throw `Error fetching ${err}`;
       });
   }
