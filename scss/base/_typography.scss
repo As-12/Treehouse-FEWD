@@ -2,37 +2,50 @@
 /*              Base styles                      */
 /* ============================================= */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 * {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+
+  word-wrap: break-word;
 }
 
 p {
   line-height: 1.45em;
-  @include font-size(16px);
+  @include font-size(14px);
+  color: #888e92;
+}
+
+body {
+  background-color: #fcfcfc;
 }
 
 a {
   text-decoration: none;
 }
 a:link {
-  color: map-get($nav-color, 'bg');
+  color: #b2b5b8;
 }
 a:visited {
-  color: map-get($nav-color, 'bg');
+  color: #b2b5b8;
 }
 a:hover {
-  color: map-get($nav-color, 'bg');
+  color: darken(#b2b5b8, 10%);
 }
 a:active {
-  color: map-get($nav-color, 'bg');
+  color: #b2b5b8;
 }
 
-canvas {
-  max-width: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #404a51;
 }
 
 /* ============================================= */
 /*              Typography                       */
 /* ============================================= */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');

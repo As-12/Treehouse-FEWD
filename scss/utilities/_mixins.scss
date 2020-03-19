@@ -72,35 +72,10 @@
   @content;
 }
 
-/*--- styling mixins ---*/
-@mixin section-title {
-  @include font-size(18px);
-  font-weight: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: map-get($nav-color, 'bg');
-  text-transform: uppercase;
-  text-align: center;
-  @include tablet {
-    margin-left: 25px;
-    text-align: left;
-  }
-  @content;
-}
-
 @mixin hover-scale-effect($scaleSize: 1.5, $transformDuration: 0.5s) {
   transition: transform $transformDuration ease;
   &:hover {
     transform: scale($scaleSize);
     cursor: pointer;
   }
-}
-
-/*--- notification bar ---- */
-
-@mixin alert-style {
-  color: white;
-  margin: 15px;
-  padding: 20px;
-  @content;
 }

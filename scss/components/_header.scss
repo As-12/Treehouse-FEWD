@@ -1,105 +1,37 @@
-/* ============================================= */
-/*              Header  Component                */
-/* ============================================= */
+header h4 {
+  @include font-size(24px);
+  margin-left: 25px;
+  text-transform: uppercase;
+}
+
 header {
-  @include flex-row;
-  background-color: map-get($header-color, 'bg');
-  color: map-get($nav-color, 'font');
-}
-
-/*--- application titles ---*/
-.app-title {
-  @include flex-row;
-  @include font-size(20px);
-  margin-left: 15px;
-  min-height: 25px;
-  margin-top: 10px;
-}
-.app-title p {
-  font-weight: lighter;
-}
-.app-title b {
-  font-weight: bold;
-}
-
-/*--- login user status and avatar --- */
-.login-user {
-  @include flex-row {
-    flex-direction: row-reverse;
-    margin-left: auto;
-    min-height: 25px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  list-style: none;
-}
-
-.login-user .avatar-img {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-}
-
-.login-user .status-bell {
-  width: 25px;
-  height: 25px;
-  margin-top: 5px;
-}
-
-.login-user > :nth-child(n) {
-  padding-right: 15px;
-}
-
-.login-user .vl {
-  border-left: 3px solid #4d4c72;
-  height: 30px;
-}
-
-.login-user .name {
-  @include font-size(15px);
-  display: none;
-
-  @include tablet {
-    display: block;
+  @include flex-col;
+  @include desktop {
+    @include flex-row;
   }
 }
 
-#status-bell {
-  width: 35px;
+input[type='search'],
+input[type='text'],
+textarea {
+  width: 50%;
+  height: 50px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
   margin-left: auto;
-  position: relative;
-  @include tablet {
-    @include hover-scale-effect(1.1);
-  }
+  margin-right: auto;
+  outline: 0;
 }
 
-#status-bell-notification {
-  fill: lightseagreen;
+input::placeholder {
+  text-align: left;
+  font-style: italic;
+  overflow: visible;
 }
 
-/*--- Drop down menu for status-bell ----*/
-.status-bell-content {
-  display: none;
-  position: absolute;
-  background-color: map-get($header-color, 'bg');
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 5px;
-  z-index: 1;
-  @include font-size(11px);
-  @include tablet {
-    @include font-size(14px);
-  }
-}
-
-.status-bell-content > :nth-child(n) {
-  color: black;
-  padding: 3px;
-  text-decoration: none;
-  display: block;
-  color: white;
-  &:hover,
-  &:focus {
-    background-color: lighten(map-get($header-color, 'bg'), 10%);
-  }
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background-image: none;
 }
