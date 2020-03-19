@@ -1,0 +1,95 @@
+.employees {
+  @include flex-row {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
+.employee-container > div {
+  width: 150px;
+  @include tablet {
+    width: 250px;
+  }
+}
+.employee-container {
+  @include flex-row {
+    margin: 25px;
+    max-height: 100px;
+  }
+  border-radius: 5px;
+  border: 2px solid #dfdfdf;
+  background-color: white;
+  padding: 75px 25px 75px 25px;
+  width: 80%;
+  min-width: 320px;
+  @include tablet {
+    padding: 75px 75px 75px 25px;
+    min-width: 400px;
+    width: 40%;
+  }
+  @include desktop {
+    width: 30%;
+  }
+  @include hover-scale-effect(1.1);
+}
+.hide {
+  display: none !important;
+}
+
+.employee-container img {
+  border-radius: 50%;
+  margin-right: 25px;
+  max-width: 30%;
+  height: auto;
+}
+input[type='search'],
+input[type='text'] {
+  background: url('../icons/icon-search.svg') no-repeat 97% 50% white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: solid 3px darken(#dfdfdf, 25%);
+  outline: none;
+  background-image: none;
+}
+
+.employee-container h4,
+.employee-container p,
+.employee-container a {
+  display: block;
+  @include font-size(16px);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.employee-container h4 {
+  font-weight: bolder;
+}
+
+#loader {
+  margin-top: 20%;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

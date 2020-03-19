@@ -1,339 +1,265 @@
-/* --------- Dataset generation / loading ---------- */
-function createRandomArray(size, lowerBound, upperBound) {
-  let result = [];
-  for (let i = 0; i != size; i += 1) {
-    result.push(Math.floor(Math.random() * upperBound) + lowerBound);
-  }
+/* eslint-disable */
 
-  return result;
+/* ----- Classs Definitions ------ */
+
+class EmployeeModel {
+  constructor(id, name, city, address, email, dob, tel, imageUrl) {
+    this.id = id;
+    this.name = name;
+    this.address = address;
+    this.tel = tel;
+    this.email = email;
+    this.dob = dob;
+    this.city = city;
+    this.imageUrl = imageUrl;
+    this.searchString = id + name + address + tel + email + dob + city;
+  }
 }
 
-const weekly = createRandomArray(11, 500, 2000);
-const hourly = createRandomArray(23, 500, 2000);
-const daily = createRandomArray(7, 500, 2000);
-const monthly = createRandomArray(12, 500, 2000);
-
-let dataSet = {
-  weekly: {
-    labels: [
-      '16-22',
-      '23-29',
-      '30-5',
-      '6-12',
-      '13-19',
-      '20-26',
-      '27-3',
-      '4-10',
-      '11-17',
-      '18-24',
-      '25-31'
-    ],
-    data: weekly
-  },
-  hourly: {
-    labels: [
-      '0-1',
-      '2-3',
-      '3-4',
-      '5-6',
-      '7-8',
-      '9-10',
-      '11-12',
-      '13-14',
-      '15-16',
-      '17-28',
-      '19-20',
-      '21-22',
-      '23-0'
-    ],
-    data: hourly
-  },
-  daily: {
-    labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-    data: daily
-  },
-  monthly: {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    data: monthly
+class EmployeeDirectoryWidget {
+  constructor(widgetId) {
+    this.size = 0;
+    this.employeeMap = {}; // Map of employee objects displayed on the widget
+    this.employeeHandleMap = {}; // Map of handles for fast lookup for style changes
+    this.widgetHandle = document.getElementById(widgetId);
   }
-};
-
-/* --------- Traffic ---------- */
-
-const trafficChartWidget = document.getElementById('traffic-chart');
-
-let trafficData = {
-  labels: dataSet.weekly.labels,
-  datasets: [
-    {
-      data: dataSet.weekly.data,
-      backgroundColor: 'rgba(116, 119, 191, .5)',
-      borderWidth: '2',
-      pointRadius: '10',
-      pointStyle: 'circle',
-      borderColor: 'rgba(116, 119, 191, 0.9)',
-      pointBackgroundColor: 'white',
-      pointHoverRadius: '15',
-      pointHoverBackgroundColor: 'white'
-    }
-  ]
-};
-
-let trafficOptions = {
-  legend: {
-    display: false
-  },
-  elements: {
-    line: {
-      tension: 0
-    }
-  },
-  scales: {
-    yAxes: [
-      {
-        gridLines: {
-          offsetGridLines: true
-        },
-        ticks: {
-          min: 500,
-          stepSize: 500
-        }
+  filterEmployee(searchString) {
+    for (let key in this.employeeMap) {
+      if (
+        this.employeeMap[key].searchString.toLowerCase().indexOf(searchString.toLowerCase()) >= 0
+      ) {
+        this.employeeHandleMap[key].classList.remove('hide');
+      } else {
+        this.employeeHandleMap[key].classList.add('hide');
       }
-    ]
-  }
-};
-
-let trafficChart = new Chart(trafficChartWidget, {
-  type: 'line',
-  data: trafficData,
-  options: trafficOptions
-});
-
-/*
- * Handling traffic Chart options events
- */
-
-document.querySelector('.traffic-options').addEventListener('click', e => {
-  let options = document.querySelector('.traffic-options');
-  if (e.target.tagName == 'A') {
-    e.preventDefault();
-    options.querySelector('.active').classList.remove('active');
-    e.target.parentElement.classList.add('active');
-
-    if (e.target.textContent.toUpperCase() === 'Hourly'.toUpperCase()) {
-      trafficData.labels = dataSet.hourly.labels;
-      trafficData.datasets[0].data = dataSet.hourly.data;
-    } else if (e.target.textContent.toUpperCase() === 'Weekly'.toUpperCase()) {
-      trafficData.labels = dataSet.weekly.labels;
-      trafficData.datasets[0].data = dataSet.weekly.data;
-    } else if (e.target.textContent.toUpperCase() === 'Monthly'.toUpperCase()) {
-      trafficData.labels = dataSet.monthly.labels;
-      trafficData.datasets[0].data = dataSet.monthly.data;
-    } else if (e.target.textContent.toUpperCase() === 'Daily'.toUpperCase()) {
-      trafficData.labels = dataSet.daily.labels;
-      trafficData.datasets[0].data = dataSet.daily.data;
-    } else {
-      throw 'Invalid traffic option detected';
     }
-    trafficChart.update();
   }
-});
 
-/* ----- Daily Chart ------ */
+  addEmployeeToWidget(employee) {
+    this.employeeMap[employee.id] = employee;
+    const element = document.createElement('div');
+    element.classList.add('employee-container');
+    element.id = employee.id;
+    element.innerHTML = `   
+    <img src="${employee.imageUrl}" alt="picture of an employee" />
+    <div>
+      <h4>${employee.name}</h4>
+      <a href="mailto:${employee.email}">${employee.email}</a>
+      <p>${employee.city}</p>
+    </div>`;
 
-const dailyChartWidget = document.getElementById('daily-chart');
+    this.employeeHandleMap[employee.id] = element;
+    this.widgetHandle.appendChild(element);
+    this.size += 1;
+  }
 
-const dailyData = {
-  labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-  datasets: [
-    {
-      label: 'Hit',
-      data: dataSet.daily.data,
-      backgroundColor: '#7477bf',
-      borderWidth: 1
-    }
-  ]
-};
-
-const dailyOptions = {
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true
+  getNextEmployee(employee) {
+    let employeeArray = [];
+    let i = 0;
+    let index = 0;
+    for (let key in this.employeeMap) {
+      if (!this.employeeHandleMap[key].classList.contains('hide')) {
+        employeeArray.push(this.employeeMap[key]);
+        if (employee.id === key) {
+          index = i;
         }
+        i += 1;
       }
-    ]
-  },
-  legend: { display: false },
-  maintainAspectRatio: false
-};
-
-let dailyChart = new Chart(dailyChartWidget, {
-  type: 'bar',
-  data: dailyData,
-  options: dailyOptions
-});
-
-/* Demographic chart */
-
-const demographicChartWidget = document.getElementById('demographic-chart');
-
-const demographicData = {
-  labels: ['Desktop', 'Tablet', 'Phones'],
-  datasets: [
-    {
-      label: '# of users',
-      data: createRandomArray(3, 0, 2000),
-      borderWidth: 0,
-      backgroundColor: ['#7477bf', '#81c98f', '#74b1bf']
     }
-  ]
-};
-
-const demographicOptions = {
-  legend: {
-    position: 'right',
-    labels: {
-      boxWidth: 20,
-      fontStyle: 'bold'
+    //Getting next element
+    index += 1;
+    index %= employeeArray.length; // rotates around if exceed boundary
+    return employeeArray[index];
+  }
+  getPrevEmployee(employee) {
+    let employeeArray = [];
+    let i = 0;
+    let index = 0;
+    for (let key in this.employeeMap) {
+      if (!this.employeeHandleMap[key].classList.contains('hide')) {
+        employeeArray.push(this.employeeMap[key]);
+        if (employee.id === key) {
+          index = i;
+        }
+        i += 1;
+      }
     }
-  },
-  maintainAspectRatio: false
-};
-
-let demographicChart = new Chart(demographicChartWidget, {
-  type: 'doughnut',
-  data: demographicData,
-  options: demographicOptions
-});
-
-let numNotification = 2;
-/* --- Header event ---- */
-document.querySelector('#status-bell').addEventListener('click', e => {
-  if (e.target.classList.contains('closebtn')) {
-    e.target.parentElement.style.display = 'none';
-    numNotification -= 1;
-    if (numNotification <= 0) {
-      document.querySelector('.status-bell-content').style.display = 'none';
+    // Getting previous element
+    if (index === 0) {
+      index = employeeArray.length; //Rotate around if exceed boundary
     }
-    return;
+    index -= 1;
+    return employeeArray[index];
   }
-  if (e.target.textContent.includes('Inbox')) {
-    $.alert({
-      title: 'Inbox',
-      content: 'You are all caught up with new messages.',
-      icon: 'fa fa-check-circle',
-      type: 'green',
-      useBootstrap: false
-    });
+}
+
+class RandomUserApiEmployeeFactory {
+  constructor() {
+    this.count = 0;
+    this.prefix = 'employee-';
   }
-  if (e.target.textContent.includes('Pull')) {
-    $.alert({
-      title: 'Pull Requests',
-      content: 'You have 2 active pull requests',
-      icon: 'fa fa-code-branch',
-      type: 'orange',
-      useBootstrap: false
-    });
+  createEmployee(randomUserApiObj) {
+    const name = `${randomUserApiObj.name.first} ${randomUserApiObj.name.last}`;
+    const city = randomUserApiObj.location.city;
+    const address = `${randomUserApiObj.location.street.number} ${randomUserApiObj.location.street.name} ${randomUserApiObj.location.city}, ${randomUserApiObj.location.state} ${randomUserApiObj.location.postcode}, ${randomUserApiObj.location.country}`;
+    const email = randomUserApiObj.email;
+    const date = new Date(randomUserApiObj.dob.date);
+    const dob = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
+    const tel = randomUserApiObj.cell;
+    const url = randomUserApiObj.picture.large;
+    this.count += 1;
+    const id = `${this.prefix}${this.count}`;
+    let myObj = new EmployeeModel(id, name, city, address, email, dob, tel, url);
+    return myObj;
   }
-  if (numNotification > 0) {
-    if (document.querySelector('.status-bell-content').style.display === 'block') {
-      document.querySelector('.status-bell-content').style.display = 'none';
-    } else {
-      document.querySelector('.status-bell-content').style.display = 'block';
+}
+
+class EmployeeModal {
+  constructor(modalId) {
+    this.id = modalId;
+    this.selectedEmployee = '';
+    this.modalHandler = document.querySelector(`#${modalId}`);
+  }
+  remove() {
+    if (
+      event.target === this.modalHandler ||
+      event.target === this.modalHandler.querySelector('.close')
+    ) {
+      this.modalHandler.style.visibility = 'hidden';
+      this.modalHandler.style.opacity = '0';
     }
-  } else {
-    document.querySelector('.status-bell-content').style.display = 'none';
   }
-});
+  create(employee) {
+    this.selectedEmployee = employee;
+    this.modalHandler.innerHTML = `
+    <div class="modal-window">
+      <span class="close">&times;</span>
+      <div class="modal-content">
+        <img src="${employee.imageUrl}" alt="picture of an employee" />
+        <h4>${employee.name}</h4>
+        <a href="mailto:${employee.email}"> ${employee.email}</a>
+        <p>${employee.city}</p>
+        <hr />
+        <p>${employee.tel}</p>
+        <p>${employee.address}</p>
+        <p>Birthday: ${employee.dob}</p>
+      </div>
+    </div>
+    <div class="scrollers">
+          <span id="${this.id}-back" class="back fa fa-angle-left" ></span>
+          <span id="${this.id}-next" class="next fa fa-angle-right"></span>
+    </div> 
+  </div>
+  `;
+    this.modalHandler.style.visibility = 'visible';
+    this.modalHandler.style.opacity = '1';
+  }
+}
 
-/*---- Sending Message ----*/
-document.querySelector('#send').addEventListener('click', e => {
-  e.preventDefault();
-  const sendTo = document.querySelector('#userField').value;
-  const message = document.querySelector('#messageField').value;
+/* A Stub Employee Repository that get its data from random user API website */
+class StubEmployeeRepository {
+  constructor(numberOfEmployees) {
+    this.employees = [];
+    this.numEmployee = numberOfEmployees;
+    this.fetchApi = 'https://randomuser.me/api/?nat=us,gb';
+    this.onReadyCallback = () => {};
 
-  //Data Validation
-  if (!sendTo || sendTo === '') {
-    $.alert({
-      title: 'Invalid Sender',
-      content: 'Please select a recipient before sending message',
-      icon: 'fa fa-warning',
-      type: 'red',
-      useBootstrap: false
-    });
-    return;
-  } else if (listOfUsers.includes(sendTo) === false) {
-    $.alert({
-      title: 'Invalid Sender',
-      content: sendTo + ' is not a valid user',
-      icon: 'fa fa-warning',
-      type: 'red',
-      useBootstrap: false
-    });
-    return;
+    if (!Number.isInteger(numberOfEmployees) || numberOfEmployees <= 0) {
+      throw 'Number of Employees must be valid Integer and greater than 0';
+    }
   }
-  if (!message || message === '') {
-    $.alert({
-      title: 'Invalid Message',
-      content: 'Please enter a message before sending message',
-      icon: 'fa fa-warning',
-      type: 'red',
-      useBootstrap: false
-    });
-    return;
+
+  /*
+  Async function that fetch data and assign them into repo
+  Call back once it completes can be assigned to onReady
+  */
+  init() {
+    let promises = [];
+    for (let i = 0; i != this.numEmployee; i += 1) {
+      promises.push(fetch(this.fetchApi));
+    }
+    // Resolve all promises,
+    // then deserialize them into data JSON,
+    // then convert them into this.employees,
+    // then call OnReadyCallback passing caller object as context
+    Promise.all(promises)
+      .then(async resp => {
+        for (let j = 0; j != resp.length; j += 1) {
+          let obj = await resp[j].json();
+          resp[j] = obj.results[0];
+        }
+        return resp;
+      })
+      .then(resp => {
+        this.employees = resp;
+        this.onReadyCallback(this);
+      })
+      .catch(err => {
+        throw `Error fetching ${err}`;
+      });
   }
-  // All good, send along the information
-  //...
-  $.alert({
-    title: 'Success',
-    content: 'Your message has been sent successfully',
-    icon: 'fa fa-check-circle',
-    type: 'green',
-    useBootstrap: false
+
+  // Assign the function to callback once the repo initialization is completed.
+  onReady(callback) {
+    this.onReadyCallback = callback;
+  }
+
+  // Get the list of employee
+  get ListOfEmployees() {
+    return this.employees;
+  }
+}
+
+/* ----- Object Instantiations  ------ */
+
+const modal = new EmployeeModal('myModal');
+const repo = new StubEmployeeRepository(12); // get 12 employees
+const factory = new RandomUserApiEmployeeFactory();
+const widget = new EmployeeDirectoryWidget('employee-widget');
+repo.onReady(e => {
+  document.querySelector('#loader').style.display = 'none';
+  e.employees.forEach(emp => {
+    widget.addEmployeeToWidget(factory.createEmployee(emp));
   });
 });
+repo.init();
 
-/*---- settings ----*/
+/* ---- Controller / Event Handlings -----*/
 
-var timeZone = document.querySelector('#timezone');
-var sendEmail = document.querySelector('#sendEmail');
-var profilePublic = document.querySelector('#profilePublic');
-
-function loadSettings() {
-  if (localStorage['timeZone']) {
-    timeZone.value = localStorage['timeZone'];
-  }
-  if (localStorage['sendEmail']) {
-    sendEmail.checked = localStorage['sendEmail'] === 'true';
-  }
-  if (localStorage['profilePublic']) {
-    profilePublic.checked = localStorage['profilePublic'] === 'true';
-  }
-}
-
-function saveSettings() {
-  localStorage['timeZone'] = timeZone.value;
-  localStorage['sendEmail'] = sendEmail.checked;
-  localStorage['profilePublic'] = profilePublic.checked;
-}
-
-document.querySelector('#save').addEventListener('click', e => {
-  e.preventDefault();
-  saveSettings();
-});
-document.querySelector('#cancel').addEventListener('click', e => {
-  e.preventDefault();
-  loadSettings();
+modal.modalHandler.addEventListener('click', () => {
+  modal.remove();
 });
 
-loadSettings();
-/* TODO: Add AJAX call to backend to populate listofUsers */
-let listOfUsers = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver', 'TC', 'All users'];
+document.querySelector('#employee-widget').addEventListener('click', () => {
+  let node = event.target;
+  /* Propagate up the DOM tree until one of the node id matches one in the widget */
+  if (event.target.tagName !== 'A') {
+    while (node) {
+      if (widget.employeeMap[node.id] !== undefined) {
+        modal.create(widget.employeeMap[node.id]);
+        break;
+      }
+      node = node.parentNode;
+    }
+  }
+});
 
-$(function() {
-  $('#userField').autocomplete({
-    source: listOfUsers
-  });
+document.querySelector('#search').addEventListener('keyup', event => {
+  if (event.isComposing || event.keyCode === 229) {
+    return;
+  }
+  widget.filterEmployee(event.target.value);
+});
+
+document.querySelector('#myModal').addEventListener('click', event => {
+  if (event.target.id == 'myModal-next') {
+    let emp = modal.selectedEmployee;
+    emp = widget.getNextEmployee(emp);
+    modal.create(emp);
+  }
+  if (event.target.id == 'myModal-back') {
+    let emp = modal.selectedEmployee;
+    emp = widget.getPrevEmployee(emp);
+    modal.create(emp);
+  }
 });
