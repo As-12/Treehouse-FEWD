@@ -1,6 +1,16 @@
 /* Gameshow.JS 
    @Auhtor: Thanaphon Chavengsaksongkram
 */
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker
+      .register('/serviceWorker.js')
+      .then(res => console.log('service worker registered'))
+      .catch(err => console.log('service worker not registered', err));
+  });
+}
+
 window.addEventListener('DOMContentLoaded', event => {
   /* ----- Shared Selectors ----- */
 
@@ -11,14 +21,7 @@ window.addEventListener('DOMContentLoaded', event => {
   /* ----- Game State & Variables ----- */
   let missed = 0;
   const maxHearts = document.querySelector('#scoreboard').firstElementChild.children.length;
-  const phrases = [
-    'Do it later',
-    'Never do it',
-    'Sometimes later becomes never',
-    'Do it now',
-    'Great things never come from comfort zones',
-    'Do it maybe'
-  ];
+  const phrases = ['Hello World', 'Web Development', 'HTML', 'Javascript', 'CSS'];
   /* ----- Functions related to Creating , Starting and Restarting game ------ */
   function getRandomPhraseAsArray(arr) {
     const index = Math.round(Math.random() * (arr.length - 1));
